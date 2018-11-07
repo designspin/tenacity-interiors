@@ -1,0 +1,16 @@
+.testimonial {
+    blockquote {
+        border-left-color: _palette(bg-alt);
+    }
+    cite {
+        color: _palette(bg);
+        padding-left: _size(element-margin);
+    }
+    cite strong {
+        color: _palette(bg);
+    }
+}
+
+.slick-dots li button {
+    box-shadow: none;
+}
