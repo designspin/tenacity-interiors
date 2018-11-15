@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
+
 import Layout from '../components/layout'
+
 import Banner from '../components/Banner'
 import Testimonials from '../components/Testimonials';
 import pic01 from '../assets/images/kitchens.jpg'
@@ -15,9 +17,9 @@ class HomeIndex extends React.Component {
         return (
             <Layout>
                 <Helmet
-                    title="Gatsby Starter - Forty"
+                    title="Kitchens, Bedrooms & Vanity Units, Handmade in Norfolk by Tenacity Interiorss"
                     meta={[
-                        { name: 'description', content: 'Sample' },
+                        { name: 'description', content: "Based in Great Massingham, Norfolk, Tenacity Interiors' experienced cabinetmakers will create handmade bespoke kitchens and furniture which is as unique as you" },
                         { name: 'keywords', content: 'sample, something' },
                     ]}
                 >
@@ -26,7 +28,6 @@ class HomeIndex extends React.Component {
                 <Banner />
 
                 <div id="main">
-
                     <section className="paper">
                         <div className="inner">
                             <div className="grid-wrapper">
@@ -45,14 +46,13 @@ class HomeIndex extends React.Component {
                             </div>
                         </div>
                     </section>
-
                     <section className="tiles">
                         <article style={{backgroundImage: `url(${pic01})`}}>
                             <header className="major">
                                 <h3>Kitchens</h3>
                                 <p>Hand-Crafted, as Individual as You</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="/handmade-kitchens" className="link primary"></Link>
                         </article>
                         <article style={{backgroundImage: `url(${pic02})`}}>
                             <header className="major">

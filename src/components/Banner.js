@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Observer from 'react-intersection-observer';
+import { NavConsumer } from './layout';
 
 class Banner extends Component {
     constructor(props) {
@@ -67,24 +69,33 @@ class Banner extends Component {
 
     render() {
         return (
-            <section id="banner" className={`major ${(this.state.videoPlaying) ? 'active' : ''}`}>
-                <div ref={this.screen} className={`tv`}>
-                    <div className={`screen mute`} id="tv"></div>
-                </div>
-                <div className="inner">
-                    <div className="grid-wrapper">
-                    <header className="major col-6">
-                        <h1>Individually designed furniture by skilled Norfolk master craftsmen</h1>
-                    </header>
-                    <div className="content col-6">
-                        <p>For professional or personal interior design projects, for any property, Tenacity Interiors offers a rare combination of skills to create perfect fitted and free-standing furniture. Based in Great Massingham, Norfolk, inspired designers, experienced cabinetmakers and specialist finishers will create bespoke furniture which is as unique as you.</p>
-                        <ul className="actions">
-                            <li><a href="#one" className="button"><i className="icon fa-play"></i></a></li>
-                        </ul>
+        <NavConsumer>
+        {({ trigger }) => (
+            <Observer 
+                id="banner"
+                tag="section" 
+                className={`major ${(this.state.videoPlaying) ? 'active' : ''}`}
+                threshold={0}
+                onChange={(inView) => { trigger(!inView)}}>
+                    <div ref={this.screen} className={`tv`}>
+                        <div className={`screen mute`} id="tv"></div>
                     </div>
+                    <div className="inner">
+                        <div className="grid-wrapper">
+                        <header className="major col-6">
+                            <h1>Individually designed furniture by skilled Norfolk master craftsmen</h1>
+                        </header>
+                        <div className="content col-6">
+                            <p>For professional or personal interior design projects, for any property, Tenacity Interiors offers a rare combination of skills to create perfect fitted and free-standing furniture. Based in Great Massingham, Norfolk, inspired designers, experienced cabinetmakers and specialist finishers will create bespoke furniture which is as unique as you.</p>
+                            <ul className="actions">
+                                <li><a href="#one" className="button"><i className="icon fa-play"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
                     </div>
-                </div>
-            </section>
+            </Observer>
+        )}
+        </NavConsumer>
         )
     }
 }
