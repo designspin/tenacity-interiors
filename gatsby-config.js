@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/tenacity-interiors",
   siteMetadata: {
     title: "Tenacity Interiors",
     description: "A website for Tenacity Interiors"
