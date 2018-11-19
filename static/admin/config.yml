@@ -13,6 +13,6 @@ collections:
     fields:
       - {label: "Key", name: "key", widget: "hidden", default: "testimonials"}
       - {label: "Quote", name: "quote", widget: "text"}
-      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Name", name: "title", widget: "string"}
       - {label: "Location", name: "location", widget: "string"}
       
