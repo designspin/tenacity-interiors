@@ -49,5 +49,15 @@ collections:
       - {label: "Key", name: "key", widget: "hidden", default: "testimonials"}
       - {label: "Quote", name: "quote", widget: "text"}
       - {label: "Name", name: "title", widget: "string"}
+      - {label: "Location", name: "location", widget: "string", required: false}
+  - name: "interior-designer-testimonials"
+    label: "Interior Designer Testimonials"
+    folder: "src/pages/interior-designer-testimonials"
+    create: true
+    fields:
+      - {label: "Key", name: "key", widget: "hidden", default: "testimonials"}
+      - {label: "Quote", name: "quote", widget: "text"}
+      - {label: "Name", name: "title", widget: "string"}
       - {label: "Location", name: "location", widget: "string"}
+      - {label: "Photo", name: "image", widget: "image", default: "/img/no-photo-large.png"}
       
