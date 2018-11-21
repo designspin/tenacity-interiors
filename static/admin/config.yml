@@ -26,6 +26,12 @@ collections:
               - { label: "Town", name: "town", widget: "string", default: "King's Lynn"}
               - { label: "County", name: "county", widget: "string", default: "Norfolk"}
               - { label: "Post Code", name: "postcode", widget: "string", default: "PE32 2HT"}
+          - label: "Team"
+            name: "team"
+            widget: list
+            fields:
+              - { label: "Name", name: "name", widget: string}
+              - { label: "Email", name: "email", widget: string}
   - name: "client-testimonials"
     label: "Client Testimonials"
     folder: "src/pages/client-testimonials"
