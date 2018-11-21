@@ -1,5 +1,7 @@
 ---
 phone: 01485 521888
+regnumber: 04914295
+vatnumber: 875 7623 77
 address:
   adr1: 'Unit 3, Waterford Industrial Estate'
   adr2: Mill Lane
@@ -12,5 +14,9 @@ team:
     name: Karl
   - email: trevor@tenacityinteriors.com
     name: Trevor
+social:
+  facebook: 'https://www.facebook.com/tenacityinteriors'
+  linkedin: 'https://www.linkedin.com/in/karl-andrews-a8022159/'
+  youtube: 'https://www.youtube.com/channel/UCes99-lSbNJjQgvzcPmdezg'
 ---
 
