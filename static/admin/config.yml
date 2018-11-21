@@ -6,6 +6,26 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "config"
+    label: "settings"
+    delete: false
+    files:
+      - file: "src/settings/index.md"
+        label: "Site Settings"
+        name: "settings"
+        fields:
+          - { label: "Key", name: "key", widget: "hidden", default: "settings"}
+          - { label: "Phone Number", name: "phone", widget: "string", default: "01485 521888"}
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Adr1", name: "adr1", widget: "string", default: "Unit 3, Waterford Industrial Estate"}
+              - { label: "Adr2", name: "adr2", widget: "string", default: "Mill Lane"}
+              - { label: "Adr3", name: "adr3", widget: "string", default: "Great Massingham"}
+              - { label: "Town", name: "town", widget: "string", default: "King's Lynn"}
+              - { label: "County", name: "county", widget: "string", default: "Norfolk"}
+              - { label: "Post Code", name: "postcode", widget: "string", default: "PE32 2HT"}
   - name: "client-testimonials"
     label: "Client Testimonials"
     folder: "src/pages/client-testimonials"
