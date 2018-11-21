@@ -16,6 +16,8 @@ collections:
         fields:
           - { label: "Key", name: "key", widget: "hidden", default: "settings"}
           - { label: "Phone Number", name: "phone", widget: "string", default: "01485 521888"}
+          - { label: "Company Reg No", name: "regnumber", widget: "string", default: "04914295"}
+          - { label: "Vat No", name: "vatnumber", widget: "string", default: "875 7623 77"}
           - label: "Address"
             name: "address"
             widget: "object"
@@ -32,6 +34,13 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: string}
               - { label: "Email", name: "email", widget: string}
+          - label: "Social Profiles"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string", default: "https://www.facebook.com/tenacityinteriors"}
+              - { label: "Linked In", name: "linkedin", widget: "string", default: "https://www.linkedin.com/in/karl-andrews-a8022159/"}
+              - { label: "You Tube", name: "youtube", widget: "string", default: "https://www.youtube.com/channel/UCes99-lSbNJjQgvzcPmdezg"}
   - name: "client-testimonials"
     label: "Client Testimonials"
     folder: "src/pages/client-testimonials"
