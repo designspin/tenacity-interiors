@@ -10,5 +10,7 @@ address:
 team:
   - email: karl@tenacityinteriors.com
     name: Karl
+  - email: trevor@tenacityinteriors.com
+    name: Trevor
 ---
 
