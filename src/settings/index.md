@@ -7,5 +7,8 @@ address:
   county: Norfolk
   postcode: PE32 2HT
   town: King's Lynn
+team:
+  - email: karl@tenacityinteriors.com
+    name: Karl
 ---
 
