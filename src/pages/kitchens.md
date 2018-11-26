@@ -1,4 +1,5 @@
 ---
+templateKey: page-template
 metaTitle: Bespoke Kitchens Handmade in Norfolk by Tenacity Interiors
 metaDescription: >-
   Hand-Crafted Norfolk kitchens, as Individual as you. Tenacity Interiors will

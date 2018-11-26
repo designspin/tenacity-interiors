@@ -32,26 +32,27 @@ exports.createPages = ({ actions, graphql }) => {
             const id = edge.node.id;
 
             if(edge.node.frontmatter.templateKey) {
-                createPage({
-                    path: edge.node.fields.slug,
-                    component: path.resolve(
-                        `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-                    ),
-                    context: {
-                        id,
-                    },
-                })
+                
+            createPage({
+                path: edge.node.fields.slug,
+                component: path.resolve(
+                    `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+                ),
+                context: {
+                    id,
+                },
+            })
             }
         });
     });
 }
 
-exports.onCreateNode = ({ node, actions, getNode}) => {
+exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions;
-
-    if(node.internal.type = 'MarkdownRemark') {
-        const value = createFilePath({ node, getNode });
-
+    
+    if(node.internal.type === 'MarkdownRemark') {
+        const value = createFilePath({ node, getNode});
+        
         createNodeField({
             name: `slug`,
             node,

@@ -13,26 +13,20 @@ export const PageQuery = graphql`
                 metaTitle
                 metaDescription
                 mainHeading
-                mainTitle
+                title
             }
         }
     }
 `;
 
-export const PageTemplate = ({
-    content,
-    contentComponent,
-}) => {
-    const PostContent = contentComponent || Content;
-
+export const PageTemplate = () => {
     return (
-        <p>Poop!</p>
+        <p>Page Template: no data</p>
     )
 }
 
-const Page = ({ data }) => {
-    const { mardownRemark: post } = data;
-
+const Page = ({data}) => {
+    const { markdownRemark: post } = data;
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
