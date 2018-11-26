@@ -46,7 +46,7 @@ collections:
     folder: "src/pages/client-testimonials"
     create: true
     fields:
-      - {label: "Key", name: "key", widget: "hidden", default: "testimonials"}
+      - {label: "Key", name: "key", widget: "hidden", default: "customer-testimonials"}
       - {label: "Quote", name: "quote", widget: "text"}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Location", name: "location", widget: "string", required: false}
@@ -55,9 +55,22 @@ collections:
     folder: "src/pages/interior-designer-testimonials"
     create: true
     fields:
-      - {label: "Key", name: "key", widget: "hidden", default: "testimonials"}
+      - {label: "Key", name: "key", widget: "hidden", default: "interior-testimonials"}
       - {label: "Quote", name: "quote", widget: "text"}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Location", name: "location", widget: "string"}
       - {label: "Photo", name: "image", widget: "image", default: "/img/no-photo-large.png"}
-      
+  - name: "pages"
+    label: "Pages"
+    delete: false
+    files: 
+      - file: "src/pages/kitchens.md"
+        label: "Kitchens"
+        name: "kitchens"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default:"page-template"}
+          - {label: "Meta Title", name: "meta-title", widget: "string"}
+          - {label: "Meta Description", name: "description", widget: "string"}
+          - {label: "Main Heading", name: "main-heading", widget: "string"}
+          - {label: "Main Text", name: "main-text", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}

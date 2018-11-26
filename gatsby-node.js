@@ -1,4 +1,4 @@
-/*const path = require('path');
+const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = ({ actions, graphql }) => {
@@ -58,4 +58,4 @@ exports.onCreateNode = ({ node, actions, getNode}) => {
             value,
         });
     }
-}*/
+}
