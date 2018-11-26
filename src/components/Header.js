@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-const Header = (props) => (
+const Header = ({ phone, ...props }) => (
     <header id="header" className={(props.isNavRevealed) ? 'reveal' : 'alt'}>
         <Link to="/" className="logo">
             <svg viewBox="0 0 424 262">
@@ -27,12 +27,12 @@ const Header = (props) => (
                 <polygon points="48.42 75.05 115.42 75.05 115.42 80.71 93.09 80.71 93.09 183.04 115.42 183.04 115.42 187.71 48.42 187.71 48.42 183.58 70.75 183.58 70.75 79.27 48.42 79.27 48.42 75.05" style={{fill:(props.isNavRevealed) ? "#4f4f4f" : "#4aafb6"}}/>
             </svg>
         </Link>
-        <p><span className="icon fa-phone"></span><a href="tel:01485 521888">01485 521888</a></p>
+        <p><span className="icon fa-phone"></span><a href={`tel:${phone}`}>{ phone }</a></p>
         <nav>
             <a className="menu-link" onClick={props.onToggleMenu}>Menu</a>
         </nav>
     </header>
-)
+);
 
 Header.propTypes = {
     onToggleMenu: PropTypes.func,

@@ -68,9 +68,10 @@ collections:
         label: "Kitchens"
         name: "kitchens"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default:"page-template"}
-          - {label: "Meta Title", name: "meta-title", widget: "string"}
-          - {label: "Meta Description", name: "description", widget: "string"}
-          - {label: "Main Heading", name: "main-heading", widget: "string"}
-          - {label: "Main Text", name: "main-text", widget: "text"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page-template"}
+          - {label: "Meta Title", name: "metaTitle", widget: "string"}
+          - {label: "Meta Description", name: "metaDescription", widget: "string"}
+          - {label: "Main Heading", name: "mainHeading", widget: "string"}
+          - {label: "Main Text", name: "mainText", widget: "text"}
+          - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
