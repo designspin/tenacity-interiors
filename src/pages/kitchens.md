@@ -1,11 +1,11 @@
 ---
-meta-title: Bespoke Kitchens Handmade in Norfolk by Tenacity Interiors
-description: >-
+metaTitle: Bespoke Kitchens Handmade in Norfolk by Tenacity Interiors
+metaDescription: >-
   Hand-Crafted Norfolk kitchens, as Individual as you. Tenacity Interiors will
   design the perfect ‘heart of the home’ for you, your family & your friends to
   enjoy
-main-heading: 'Hand-Crafted Norfolk Kitchens, as Individual as You'
-main-text: >-
+mainHeading: 'Hand-Crafted Norfolk Kitchens, as Individual as You'
+mainText: >-
   If you looking for a kitchen that is wonderful to look at and a joy to cook or
   socialise in, Tenacity Interiors will design the perfect ‘heart of the home’
   for you, your family and your friends to enjoy.
