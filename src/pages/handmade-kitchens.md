@@ -7,9 +7,9 @@ metaDescription: >-
   enjoy
 mainHeading: 'Hand-Crafted Norfolk Kitchens, as Individual as You'
 mainText: >-
-  If you looking for a kitchen that is wonderful to look at and a joy to cook or
-  socialise in, Tenacity Interiors will design the perfect ‘heart of the home’
-  for you, your family and your friends to enjoy.
+  If you're looking for a kitchen that is wonderful to look at and a joy to cook
+  or socialise in, Tenacity Interiors will design the perfect ‘heart of the
+  home’ for you, your family and your friends to enjoy.
 title: So what makes a Tenacity Interiors’ kitchen so uniquely specific to you?
 ---
 Firstly, one of Tenacity Interiors owners - Trevor Pragg or Karl Andrews - will personally visit and survey your property, so they have first-hand knowledge of how to maximise the use of space. During your initial meeting they will talk to you about what your ideal kitchen should be like, what equipment you want in it and the styles and materials you prefer.
