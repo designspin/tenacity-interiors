@@ -8,10 +8,10 @@ const Footer = (props) => (
                 <div className="col-4">
                     <h4>Hand Made In Norfolk</h4>
                     <ul className="alt">
-                        <li><Link to="/kitchens">Kitchens</Link></li>
-                        <li><Link to="/bedrooms">Bedrooms</Link></li>
+                        <li><Link to="/handmade-kitchens">Kitchens</Link></li>
+                        <li><Link to="/fitted-bedrooms">Bedrooms</Link></li>
                         <li><Link to="/vanity-units">Vanity Units</Link></li>
-                        <li><Link to="/furniture">Furniture</Link></li>
+                        <li><Link to="/bespoke-furniture">Furniture</Link></li>
                         <li><Link to="/interior-designers-architects">Information For Interior Designers</Link></li>
                         <li><Link to="/interior-designers-architects">Information for Architects / Developers</Link></li>
                     </ul>

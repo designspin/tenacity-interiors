@@ -59,21 +59,21 @@ class HomeIndex extends React.Component {
                                 <h3>Bedrooms</h3>
                                 <p>Hand-Made Fitted Bedrooms</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="/fitted-bedrooms" className="link primary"></Link>
                         </article>
                         <article style={{backgroundImage: `url(${pic03})`}}>
                             <header className="major">
                                 <h3>Vanity Units</h3>
                                 <p>Hand-Made Specifically For You</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="/vanity-units" className="link primary"></Link>
                         </article>
                         <article style={{backgroundImage: `url(${pic04})`}}>
                             <header className="major">
                                 <h3>Furniture</h3>
                                 <p>We Design and Deliver Hand Made Furniture You Need</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="/bespoke-furniture" className="link primary"></Link>
                         </article>
                     </section>
 
