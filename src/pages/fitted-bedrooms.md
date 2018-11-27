@@ -1,0 +1,3 @@
+---
+templateKey: page-template
+---

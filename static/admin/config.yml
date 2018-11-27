@@ -64,9 +64,20 @@ collections:
     label: "Pages"
     delete: false
     files: 
-      - file: "src/pages/kitchens.md"
+      - file: "src/pages/handmade-kitchens.md"
         label: "Kitchens"
         name: "kitchens"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page-template"}
+          - {label: "Meta Title", name: "metaTitle", widget: "string"}
+          - {label: "Meta Description", name: "metaDescription", widget: "string"}
+          - {label: "Main Heading", name: "mainHeading", widget: "string"}
+          - {label: "Main Text", name: "mainText", widget: "text"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/fitted-bedrooms.md"
+        label: "Bedrooms"
+        name: "bedrooms"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page-template"}
           - {label: "Meta Title", name: "metaTitle", widget: "string"}
