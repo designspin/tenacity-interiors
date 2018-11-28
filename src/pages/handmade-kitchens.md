@@ -5,6 +5,7 @@ metaDescription: >-
   Hand-Crafted Norfolk kitchens, as Individual as you. Tenacity Interiors will
   design the perfect ‘heart of the home’ for you, your family & your friends to
   enjoy
+mainImage: /img/img_0002-hdr.jpg
 mainHeading: 'Hand-Crafted Norfolk Kitchens, as Individual as You'
 mainText: >-
   If you're looking for a kitchen that is wonderful to look at and a joy to cook
