@@ -4,6 +4,7 @@ metaTitle: Vanity Units Handmade in Norfolk by Tenacity Interiors
 metaDescription: >-
   Bathroom vanity units specifically hand-made for you by Tenacity Interiors,
   masters at creating bespoke Vanity Units of style & elegance
+mainImage: /img/walnut-vanity.jpg
 mainHeading: Vanity Units Specifically Hand-Made For You
 mainText: >-
   Having a vanity unit is an essential piece of furniture for men as well as
