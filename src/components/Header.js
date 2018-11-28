@@ -29,7 +29,7 @@ const Header = ({ phone, ...props }) => (
         </Link>
         <p><span className="icon fa-phone"></span><a href={`tel:${phone}`}>{ phone }</a></p>
         <nav>
-            <a className="menu-link" onClick={props.onToggleMenu}>Menu</a>
+            <a href="#" className="menu-link" onClick={(e) => { e.preventDefault(); props.onToggleMenu(); }}>Menu</a>
         </nav>
     </header>
 );

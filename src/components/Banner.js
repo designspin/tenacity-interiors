@@ -39,7 +39,7 @@ class Banner extends Component {
     }
 
     onPlayerReady() {
-        this.video.loadVideoById({'videoId':'h5Nma9lOACg', 'endSeconds': 34});
+        this.video.loadVideoById({'videoId': this.props.videoId, 'endSeconds': 34});
         this.video.mute();
     }
 
@@ -83,10 +83,10 @@ class Banner extends Component {
                     <div className="inner">
                         <div className="grid-wrapper">
                         <header className="major col-6">
-                            <h1>Individually designed furniture by skilled Norfolk master craftsmen</h1>
+                            <h1>{this.props.title}</h1>
                         </header>
                         <div className="content col-6">
-                            <p>For professional or personal interior design projects, for any property, Tenacity Interiors offers a rare combination of skills to create perfect fitted and free-standing furniture. Based in Great Massingham, Norfolk, inspired designers, experienced cabinetmakers and specialist finishers will create bespoke furniture which is as unique as you.</p>
+                            <p>{this.props.introText}</p>
                             <ul className="actions">
                                 <li><a href="#one" className="button"><i className="icon fa-play"></i></a></li>
                             </ul>
