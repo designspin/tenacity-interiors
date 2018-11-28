@@ -5,7 +5,7 @@ metaDescription: >-
   Perfect bespoke furniture such as occasional tables, bookcases, display
   cabinets & more. Handmade by master cabinetmakers & joiners, Tenacity
   Interiors in Norfolk
-mainImage: /img/_v4t5011-2.jpg
+mainImage: /img/cimg0032.jpg
 mainHeading: 'Tenacity Interiors Will Design, Make by Hand and Deliver Furniture You Need'
 mainText: >-
   It is a genuine pleasure for Tenacity Interiors, whenever a prospective client
