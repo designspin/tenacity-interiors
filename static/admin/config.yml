@@ -71,6 +71,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page-template"}
           - {label: "Meta Title", name: "metaTitle", widget: "string"}
           - {label: "Meta Description", name: "metaDescription", widget: "string"}
+          - {label: "Main Image", name: "mainImage", widget: "image"}
           - {label: "Main Heading", name: "mainHeading", widget: "string"}
           - {label: "Main Text", name: "mainText", widget: "text"}
           - {label: "Title", name: "title", widget: "string"}
@@ -82,6 +83,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page-template"}
           - {label: "Meta Title", name: "metaTitle", widget: "string"}
           - {label: "Meta Description", name: "metaDescription", widget: "string"}
+          - {label: "Main Image", name: "mainImage", widget: "image"}
           - {label: "Main Heading", name: "mainHeading", widget: "string"}
           - {label: "Main Text", name: "mainText", widget: "text"}
           - {label: "Title", name: "title", widget: "string"}
@@ -93,6 +95,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page-template"}
           - {label: "Meta Title", name: "metaTitle", widget: "string"}
           - {label: "Meta Description", name: "metaDescription", widget: "string"}
+          - {label: "Main Image", name: "mainImage", widget: "image"}
           - {label: "Main Heading", name: "mainHeading", widget: "string"}
           - {label: "Main Text", name: "mainText", widget: "text"}
           - {label: "Title", name: "title", widget: "string"}
@@ -104,6 +107,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page-template"}
           - {label: "Meta Title", name: "metaTitle", widget: "string"}
           - {label: "Meta Description", name: "metaDescription", widget: "string"}
+          - {label: "Main Image", name: "mainImage", widget: "image"}
           - {label: "Main Heading", name: "mainHeading", widget: "string"}
           - {label: "Main Text", name: "mainText", widget: "text"}
           - {label: "Title", name: "title", widget: "string"}
