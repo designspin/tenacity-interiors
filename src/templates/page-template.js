@@ -18,6 +18,13 @@ export const PageQuery = graphql`
                 mainHeading
                 mainText
                 title
+                mainImage {
+                    childImageSharp {
+                        fluid(maxWidth: 1900) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
             }
             fields {
                 slug
@@ -26,7 +33,7 @@ export const PageQuery = graphql`
     }
 `;
 
-export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url}) => {
+export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url, mainImage }) => {
     const PostContent = contentComponent || Content;
 
     return (
@@ -34,6 +41,7 @@ export const PageTemplate = ({mainHeading, mainText, title, content, contentComp
         <Banner
             title={mainHeading}
             introText={mainText}
+            mainImage={mainImage}
         />
         <section className="paper">
             <div className="inner">
@@ -60,7 +68,6 @@ export const PageTemplate = ({mainHeading, mainText, title, content, contentComp
 
 const Page = ({data}) => {
     const { markdownRemark: post } = data;
-    
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
@@ -74,6 +81,7 @@ const Page = ({data}) => {
                 mainHeading={post.frontmatter.mainHeading}
                 mainText={post.frontmatter.mainText}
                 url={post.fields.slug}
+                mainImage={post.frontmatter.mainImage.childImageSharp.fluid}
             />
         </Layout>
     )

@@ -20,6 +20,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `img`,
+        path: `${__dirname}/static/img`
+      }
+    },
+    {
       resolve: `gatsby-plugin-netlify-cms-paths`,
       options: {
         cmsConfig: `static/admin/config.yml`
