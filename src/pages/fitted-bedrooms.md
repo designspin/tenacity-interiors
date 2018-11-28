@@ -4,6 +4,7 @@ metaTitle: Fitted Bedrooms Handmade in Norfolk by Tenacity Interiors
 metaDescription: >-
   Indulge yourself in your own hand-made fitted bedroom by Tenacity Interiors,
   unlike anything you could ever find 'ready-made'
+mainImage: /img/cricklewood-robes.jpg
 mainHeading: Indulge Yourself in Your Own Hand-Made Fitted Bedroom
 mainText: >-
   If you are looking for fabulous fitted furniture, quite simply, a Tenacity
