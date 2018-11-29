@@ -136,7 +136,7 @@ class Banner extends Component {
                         <div className="screen-holder">
                             <div className={`screen mute`} id="tv"></div>
                         </div>
-                        <a href="#stop" onClick={this.onStopClick} className="button"><FaStop /></a>
+                        <a href="?stop=true" aria-label="Stop Video" onClick={this.onStopClick} className="button"><FaStop /></a>
                     </div>
                     <div className="inner">
                         <div className="grid-wrapper">
@@ -146,7 +146,7 @@ class Banner extends Component {
                         <div className="content col-6">
                             <p>{this.props.introText}</p>
                             <ul className="actions">
-                                <li><a href="#play" onClick={this.onPlayClick} className="button"><FaPlay /></a></li>
+                                <li><a href="?play=true" aria-label="Play Video" onClick={this.onPlayClick} className="button"><FaPlay /></a></li>
                             </ul>
                         </div>
                         </div>
