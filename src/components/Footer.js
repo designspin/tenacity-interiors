@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { FaFacebook, FaLinkedin, FaYoutubeSquare } from 'react-icons/fa';
 
 const Footer = (props) => (
     <footer id="footer">
@@ -43,9 +44,9 @@ const Footer = (props) => (
                 </div>
             </div>
             <ul className="icons">
-                <li><a href="https://www.facebook.com/tenacityinteriors" className="icon alt alt--square fa-facebook"><span className="label">Facebook</span></a></li>
-                <li><a href="https://www.linkedin.com/in/karl-andrews-a8022159/" className="icon alt alt--square fa-linkedin"><span className="label">LinkedIn</span></a></li>
-                <li><a href="https://www.youtube.com/channel/UCes99-lSbNJjQgvzcPmdezg" className="icon alt alt--square fa-youtube"><span className="label">Youtube</span></a></li>   
+                <li><a href="https://www.facebook.com/tenacityinteriors" aria-label="Visit us on Facebook" className="icon icon--facebook"><FaFacebook /></a></li>
+                <li><a href="https://www.linkedin.com/in/karl-andrews-a8022159/" aria-label="Connect with Karl on Linked in" className="icon icon--linkedin"><FaLinkedin /></a></li>
+                <li><a href="https://www.youtube.com/channel/UCes99-lSbNJjQgvzcPmdezg" aria-label="See videos on Youtube" className="icon icon--youtube"><FaYoutubeSquare /></a></li>   
             </ul>
             <ul className="copyright">
                 <li>&copy; Tenacity Interiors Ltd {(new Date().getFullYear())}</li>

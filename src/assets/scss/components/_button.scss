@@ -35,6 +35,12 @@
 		text-transform: uppercase;
 		white-space: nowrap;
 
+		& svg {
+			vertical-align: middle;
+			font-size: 2em;
+			padding: 0;
+		}
+
 		&:hover, &:active {
 			box-shadow: inset 0 0 0 2px _palette(highlight);
 			color: _palette(highlight);
