@@ -1,6 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Img from 'gatsby-image';
 import Observer from 'react-intersection-observer';
 import { NavConsumer } from './layout';
+
+import bgImage from '../assets/images/home-hero.jpg';
 
 class Banner extends Component {
     constructor(props) {
@@ -13,8 +16,10 @@ class Banner extends Component {
         this.onPlayerReady = this.onPlayerReady.bind(this);
         this.onPlayerStateChange = this.onPlayerStateChange.bind(this);
         this.rescaleVideo = this.rescaleVideo.bind(this);
+        this.onPlayClick = this.onPlayClick.bind(this);
     }
-    componentDidMount() {
+
+    onPlayClick() {
         const playerDefaults = {autoplay: 0, autohide: 1, modestbranding: 0, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3};
         const tag = document.createElement('script');
         tag.src = 'https://www.youtube.com/player_api';
@@ -34,8 +39,6 @@ class Banner extends Component {
         }
 
         window.addEventListener('resize', this.rescaleVideo);
-
-        
     }
 
     onPlayerReady() {
@@ -75,6 +78,7 @@ class Banner extends Component {
                 id="banner"
                 tag="section" 
                 className={`major ${(this.state.videoPlaying) ? 'active' : ''}`}
+                style={{ backgroundImage: `url(${bgImage})`}}
                 threshold={0}
                 onChange={(inView) => { trigger(!inView)}}>
                     <div ref={this.screen} className={`tv`}>
@@ -88,7 +92,7 @@ class Banner extends Component {
                         <div className="content col-6">
                             <p>{this.props.introText}</p>
                             <ul className="actions">
-                                <li><a href="#one" className="button"><i className="icon fa-play"></i></a></li>
+                                <li><a href="#one" onClick={this.onPlayClick} className="button"><i className="icon fa-play"></i></a></li>
                             </ul>
                         </div>
                         </div>
