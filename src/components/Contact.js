@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { FaEnvelope, FaPhoneSquare, FaLocationArrow } from 'react-icons/fa';
 const Contact = (props) => (
     <section id="contact">
         <div className="inner">
@@ -26,23 +26,20 @@ const Contact = (props) => (
             <section className="split">
                 <section>
                     <div className="contact-method">
-                        <span className="icon alt fa-envelope"></span>
-                        <h3>Email</h3>
+                        <h3><FaEnvelope /> Email</h3>
                         <a href="mailto:karl@tenacityinteriors.com">karl@tenacityinteriors.com</a><br/>
                         <a href="mailto:trevor@tenacityinteriors.com">trevor@tenacityinteriors.com</a>
                     </div>
                 </section>
                 <section>
                     <div className="contact-method">
-                        <span className="icon alt fa-phone"></span>
-                        <h3>Phone</h3>
+                        <h3><FaPhoneSquare /> Phone</h3>
                         <span><a href="tel:01485 521888">01485 521888</a></span>
                     </div>
                 </section>
                 <section>
                     <div className="contact-method">
-                        <span className="icon alt fa-home"></span>
-                        <h3>Address</h3>
+                        <h3><FaLocationArrow /> Address</h3>
                         <span>Unit 3, Waterford Industrial Estate<br />
                         Mill Lane<br />
                         Great Massingham<br />
