@@ -76,6 +76,7 @@
 				position: absolute;
 				width: 100%;
 				z-index: 2;
+				background-color: _palette(bg);
 			}
 
 			&:after {
@@ -107,7 +108,7 @@
 				width: 60%;
 			}
 
-			&:nth-child(6n - 5) {
+			/*&:nth-child(6n - 5) {
 				&:before {
 					background-color: _palette(accent1);
 				}
@@ -141,7 +142,7 @@
 				&:before {
 					background-color: _palette(accent6);
 				}
-			}
+			}*/
 		}
 
 		@include breakpoint(large) {
