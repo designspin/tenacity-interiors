@@ -10,7 +10,7 @@ class Banner extends Component {
         super(props);
 
         this.state = {
-            videoScriptLoaded: (window.YT && window.YT.Player) ? true : false,
+            videoScriptLoaded: null,
             videoHasPlayed: false,
             videoLoading: false,
             videoPlaying: false,
@@ -22,6 +22,12 @@ class Banner extends Component {
         this.rescaleVideo = this.rescaleVideo.bind(this);
         this.onPlayClick = this.onPlayClick.bind(this);
         this.onStopClick = this.onStopClick.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            videoScriptLoaded: (window.YT && window.YT.Player) ? true : false
+        });
     }
 
     onStopClick(e) {
