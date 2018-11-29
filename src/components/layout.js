@@ -71,7 +71,7 @@ class Layout extends React.Component {
         return (
             <>
                 <Meta metaTitle={this.props.metaTitle} metaDescription={this.props.metaDescription} />
-                <div className={`body ${this.state.loading} ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
+                <div className={`body ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
                     <NavProvider value={{ trigger: this.handleRevealMenu, revealed: this.state.isNavRevealed }}>
                         <div id="wrapper">
                             <Header 
