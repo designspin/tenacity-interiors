@@ -1,0 +1,30 @@
+.paper {
+    background-color: _palette(paper);
+    color: _palette(bg);
+}
+
+.paper h1, .paper h2, .paper h3, .paper h4, .paper h5, .paper h6 {
+    color: _palette(bg);
+}
+
+.paper .lead {
+    font-size: 110%;
+    font-weight: 500;
+    margin-bottom: 2em;
+}
+
+.paper header.major {
+    width: auto;
+}
+
+.paper header.major h1 {
+    width: auto;
+    color: _palette(bg-alt);
+}
+.paper header.major >:first-child:after {
+    background-color:_palette(bg-alt);
+}
+
+.paper strong {
+    color: _palette(bg);
+}
