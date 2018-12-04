@@ -9,8 +9,10 @@ title: >-
   Tenacity Interiors Offers the Best Combination of Traditional Cabinetmakers,
   Creative Skills and Tools
 ---
+
 <div class="grid-wrapper">
 <div class="col-6">
+
 `youtube:https://www.youtube.com/embed/x-VANUPDmrg`
 </div>
 <div class="col-6">
