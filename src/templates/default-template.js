@@ -54,7 +54,7 @@ const DefaultTemplate = ({ title, content, contentComponent, url }) => {
 
 const DefaultPage = ({ data }) => {
     const { post } = data;
-
+    console.log(post.html);
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
@@ -63,7 +63,7 @@ const DefaultPage = ({ data }) => {
             >
             <DefaultTemplate
                 title={post.frontmatter.title}
-                content={post.html}
+                content={post.html.replace('<p><div>', '<div>').replace('</div></p>', '</div>')}
                 contentComponent={HTMLContent}
                 url={post.fields.slug}
             />

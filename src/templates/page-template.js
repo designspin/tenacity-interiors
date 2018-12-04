@@ -36,6 +36,7 @@ export const PageQuery = graphql`
 export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url, mainImage }) => {
     const PostContent = contentComponent || Content;
 
+    console.log(content);
     return (
     <main id="main">
         <Banner
