@@ -12,7 +12,7 @@ title: >-
 <div class="grid-wrapper">
 <div class="col-6">
 
-'youtube:https://www.youtube.com/embed/x-VANUPDmrg'
+\`youtube:https://www.youtube.com/embed/x-VANUPDmrg\`
 
 </div>
 <div class="col-6">
