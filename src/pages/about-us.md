@@ -9,11 +9,7 @@ title: >-
   Tenacity Interiors Offers the Best Combination of Traditional Cabinetmakers,
   Creative Skills and Tools
 ---
-<div class="grid-wrapper"><div class="col-6">
-
-`youtube:https://www.youtube.com/embed/x-VANUPDmrg`
-
-</div><div class="col-6">
+<div class="grid-wrapper"><div class="col-6">`youtube:https://www.youtube.com/embed/x-VANUPDmrg`</div><div class="col-6">
 
 If you're looking for highly skilled, imaginative cabinet makers who will listen to your ideas, provide insightful advice and then deliver furniture which will delight you, and stand the test of time, your quest is over. Tenacity Interiors is the company of craftsmen for you.
 
