@@ -16,6 +16,8 @@ title: >-
 
 </div>
 <div class="col-6">
+
+
 If you're looking for highly skilled, imaginative cabinet makers who will listen to your ideas, provide insightful advice and then deliver furniture which will delight you, and stand the test of time, your quest is over. Tenacity Interiors is the company of craftsmen for you.
 
 Trevor Pragg and Karl Andrews have worked together for many years, originally meeting at the company they subsequently bought and renamed as Tenacity Interiors in 2002.
