@@ -9,7 +9,11 @@ metaDescription: >-
 title: Interior Designer and Property Development Projects
 ---
 <div class="lead">
+
+
 Tenacity Interiors has, throughout the years since its establishment in 2002, specialised in working with professional interior designers and property development companies creating high-end market ‘new builds’ or conducting major refurbishment projects.
+
+
 </div>
 <div class="grid-wrapper">
 <div class="col-6">
@@ -21,6 +25,7 @@ As an interior designer or property developer, you will be fully aware that ther
 As a Tenacity Interiors professional client, you will receive all the insights and support you need at every stage of your projects. Trevor and Karl, and each craftsman in the Great Massingham workshops, are always completely dedicated to your project wherever it may be and whatever the project entails. Tenacity Interiors becomes part of YOUR team.
 
 Tenacity Interiors can either take the lead in the design and creation of fitted furniture, architectural features and free-standing items OR will work closely with the client-designer to deliver exactly what is shown on supplied drawings.
+
 </div>
 <div class="col-6">
 
@@ -31,6 +36,7 @@ Tenacity Interiors is linked with many highly specialised companies who produce 
 Whatever the project, Tenacity Interiors works in a highly collaborative manner with everyone who is involved.
 
 Tenacity Interiors have been responsible for significant installations in the heart of London, in New York and throughout the South and East of the UK. Projects have ranged from outstanding, complete refurbishments of multi-million-pound properties to creating a complex and highly secure desk for a client who required shagreen panels, wiring for remote locking and removable panels for access to plugs, USBs and phone sockets. And every type of project in between.
+
 </div>
 </div>
 
