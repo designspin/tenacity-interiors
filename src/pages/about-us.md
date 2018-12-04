@@ -21,7 +21,7 @@ If you're looking for highly skilled, imaginative cabinet makers who will listen
 
 Trevor Pragg and Karl Andrews have worked together for many years, originally meeting at the company they subsequently bought and renamed as Tenacity Interiors in 2002.
 
-Both cabinetmakers were trained ‘the traditional way’ and their combined knowledge of design and construction of the most demanding projects has led to a strong reputation for Tenacity Interiors as the ‘go to’ company when quality, style and customer service is needed – as well as confidence that fitted or free-standing furniture projects will always be outstanding.
+Both cabinetmakers were trained ‘the traditional way’ and their combined knowledge of design and construction of the most demanding projects has led to a strong reputation for Tenacity Interiors as the ‘go to’ company when quality, style and customer service is needed – as well as confidence that fitted or free-standing [furniture](/bespoke-funiture) projects will always be outstanding.
 
 </div>
 </div>
