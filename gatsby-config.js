@@ -45,7 +45,15 @@ module.exports = {
               withWebp: true
             }
           },
-          'gatsby-plugin-netlify-cms-paths'
+          'gatsby-plugin-netlify-cms-paths',
+          {
+            resolve: 'gatsby-remark-embed-youtube',
+            options: {
+              width: 800,
+              height: 400
+            }
+          },
+          'gatsby-remark-responsive-iframe'
         ]
       }
     },
