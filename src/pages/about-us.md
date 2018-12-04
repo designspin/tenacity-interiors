@@ -9,8 +9,6 @@ title: >-
   Tenacity Interiors Offers the Best Combination of Traditional Cabinetmakers,
   Creative Skills and Tools
 ---
-<<<<<<< HEAD
-
 <div class="grid-wrapper">
 <div class="col-6">
 
@@ -18,21 +16,10 @@ title: >-
 
 </div>
 <div class="col-6">
-=======
-<div class="grid-wrapper"><div class="col-6">\`youtube:https://www.youtube.com/embed/x-VANUPDmrg\`</div><div class="col-6">
->>>>>>> 79c404b49012d0801361922e2988c8a5078bd481
-
 If you're looking for highly skilled, imaginative cabinet makers who will listen to your ideas, provide insightful advice and then deliver furniture which will delight you, and stand the test of time, your quest is over. Tenacity Interiors is the company of craftsmen for you.
 
 Trevor Pragg and Karl Andrews have worked together for many years, originally meeting at the company they subsequently bought and renamed as Tenacity Interiors in 2002.
 
-<<<<<<< HEAD
-Both cabinetmakers were trained ‘the traditional way’ and their combined knowledge of design and construction of the most demanding projects has led to a strong reputation for Tenacity Interiors as the ‘go to’ company when quality, style and customer service is needed – as well as confidence that fitted or free-standing [furniture](/bespoke-furniture) projects will always be outstanding.
-
-</div>
-</div>
-=======
 </div></div>
 
 Both cabinetmakers were trained ‘the traditional way’ and their combined knowledge of design and construction of the most demanding projects has led to a strong reputation for Tenacity Interiors as the ‘go to’ company when quality, style and customer service is needed – as well as confidence that fitted or free-standing [furniture](/bespoke-furniture) projects will always be outstanding.
->>>>>>> 79c404b49012d0801361922e2988c8a5078bd481
