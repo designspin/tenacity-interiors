@@ -25,7 +25,7 @@ export const ContactQuery = graphql`
     }
 `;
 
-const ContactTemplate = ({ title, content, contentComponent, url }) => {
+const ContactTemplate = ({ title, content, contentComponent, url, settings }) => {
     const PostContent = contentComponent || Content;
 
     return (
@@ -36,7 +36,7 @@ const ContactTemplate = ({ title, content, contentComponent, url }) => {
                 <PostContent content={content} />
             </div>
         </section>
-        <Contact />
+        <Contact settings={settings} />
         <aside>
             <div className="inner">
                 <div className="grid-wrapper">
@@ -44,7 +44,7 @@ const ContactTemplate = ({ title, content, contentComponent, url }) => {
                         <Share url={url} text="Share This:" />
                     </div>
                     <div className="col-4 complimentary">
-                        <p className="col-8">To book your complimentary design consultation today call Karl on <a href="tel:01485 521888"><strong>01485 521888</strong></a></p>
+                        <p className="col-8">To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone}`}>{settings.phone}<strong></strong></a></p>
                         <img className="col-4" src={pic05} alt="Karl Andrews" />
                     </div>
                 </div>
@@ -56,7 +56,6 @@ const ContactTemplate = ({ title, content, contentComponent, url }) => {
 
 const ContactPage = ({ data }) => {
     const { post } = data;
-    console.log(post.html);
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}

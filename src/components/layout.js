@@ -22,6 +22,10 @@ const LayoutQuery = graphql`
                     postcode
                     town
                 }
+                team {
+                    email
+                    name
+                }
                 social {
                     facebook
                     linkedin
@@ -79,7 +83,13 @@ class Layout extends React.Component {
     }
 
     render() {
-        const { children } = this.props
+        
+        const children = React.Children.map(this.props.children, child => {
+            return React.cloneElement(child, {
+                settings: this.props.data
+            })
+        })
+
 
         return (
             <>
