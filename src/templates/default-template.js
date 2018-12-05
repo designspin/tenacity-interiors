@@ -24,7 +24,7 @@ export const DefaultQuery = graphql`
     }
 `;
 
-const DefaultTemplate = ({ title, content, contentComponent, url }) => {
+const DefaultTemplate = ({ title, content, contentComponent, url, settings }) => {
     const PostContent = contentComponent || Content;
 
     return (
@@ -42,7 +42,7 @@ const DefaultTemplate = ({ title, content, contentComponent, url }) => {
                         <Share url={url} text="Share This:" />
                     </div>
                     <div className="col-4 complimentary">
-                        <p className="col-8">To book your complimentary design consultation today call Karl on <a href="tel:01485 521888"><strong>01485 521888</strong></a></p>
+                    <p className="col-8">To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone}`}>{settings.phone}<strong></strong></a></p>
                         <img className="col-4" src={pic05} alt="Karl Andrews" />
                     </div>
                 </div>

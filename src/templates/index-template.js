@@ -74,7 +74,7 @@ export const IndexQuery = graphql`
     }
 `;
 
-const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, mainText, kitchen, bedroom, vanity, furniture }) => {
+const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, mainText, kitchen, bedroom, vanity, furniture, settings }) => {
     const PostContent = contentComponent || Content;
 
     return (
@@ -182,7 +182,7 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                             <PostContent content={content}/>
                         </div>
                         <div className="col-4 complimentary">
-                            <p className="col-8">To book your complimentary design consultation today call Karl on <a href="tel:01485 521888"><strong>01485 521888</strong></a></p>
+                        <p className="col-8">To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone}`}>{settings.phone}<strong></strong></a></p>
                             <img className="col-4" src={pic05} alt="Karl Andrews" />
                         </div>
                     </div>
