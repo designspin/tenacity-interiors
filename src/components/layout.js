@@ -1,12 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet';
-import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby';
 
 import '../assets/scss/main.scss'
 import Header from './Header'
 import Menu from './Menu'
-import Contact from './Contact'
 import Footer from './Footer'
 
 const LayoutQuery = graphql`
@@ -14,6 +12,21 @@ const LayoutQuery = graphql`
         markdownRemark(fileAbsolutePath: {regex: "/(settings)/"}) {
             frontmatter {
                 phone
+                regnumber
+                vatnumber
+                address {
+                    adr1
+                    adr2
+                    adr3
+                    county
+                    postcode
+                    town
+                }
+                social {
+                    facebook
+                    linkedin
+                    youtube
+                }
             }
         }
     }
@@ -79,8 +92,11 @@ class Layout extends React.Component {
                                 onToggleMenu={this.handleToggleMenu} 
                                 isNavRevealed={this.state.isNavRevealed} />
                             {children}
-                            <Contact />
-                            <Footer />
+                            <Footer 
+                                address={this.props.data.address} 
+                                regnumber={this.props.data.regnumber}
+                                vatnumber={this.props.data.vatnumber}
+                                social={this.props.data.social}/>
                         </div>
                     </NavProvider>
                     <Menu onToggleMenu={this.handleToggleMenu} />

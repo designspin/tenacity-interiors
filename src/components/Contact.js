@@ -1,5 +1,33 @@
 import React from 'react'
 import { FaEnvelope, FaPhoneSquare, FaLocationArrow } from 'react-icons/fa';
+
+export const ContactAlt = (props) => (
+    <section>
+        <div className="inner">
+        <div className="grid-wrapper">
+            <div className="col-4">
+                <h3><FaEnvelope /> Email</h3>
+                <a href="mailto:karl@tenacityinteriors.com">karl@tenacityinteriors.com</a><br/>
+                <a href="mailto:trevor@tenacityinteriors.com">trevor@tenacityinteriors.com</a>
+            </div>
+            <div className="col-4">
+                <h3><FaPhoneSquare /> Phone</h3>
+                <span><a href="tel:01485 521888">01485 521888</a></span>
+            </div>
+            <div className="col-4">
+                <h3><FaLocationArrow /> Address</h3>
+                <span>Unit 3, Waterford Industrial Estate<br />
+                Mill Lane<br />
+                Great Massingham<br />
+                King's Lynn<br />
+                Norfolk<br />
+                PE32 2HT</span>
+            </div>
+        </div>
+        </div>
+    </section>
+); 
+
 const Contact = (props) => (
     <section id="contact">
         <div className="inner">

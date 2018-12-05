@@ -31,22 +31,24 @@ const Footer = (props) => (
                     <h4>Tenacity Interiors Limited</h4>
                     <p>
                         Registered Office: <br />
-                        Unit 3, Waterford Industrial Estate <br />
-                        Mill Lane <br />
-                        Great Massingham <br />
-                        King's Lynn <br />
-                        PE32 2HT <br />
+                        <address>
+                        {props.address.adr1}<br />
+                        {props.address.adr2}<br />
+                        {props.address.adr3}<br />
+                        {props.address.town}<br />
+                        {props.address.postcode}<br />
+                        </address>
                     </p>
                     <p>
-                        Registered company No.04914295<br />
-                        VAT No: 875 7623 77
+                        Registered company No.{props.regnumber}<br />
+                        VAT No: {props.vatnumber}
                     </p>
                 </div>
             </div>
             <ul className="icons">
-                <li><a href="https://www.facebook.com/tenacityinteriors" aria-label="Visit us on Facebook" className="icon icon--facebook"><FaFacebook /></a></li>
-                <li><a href="https://www.linkedin.com/in/karl-andrews-a8022159/" aria-label="Connect with Karl on Linked in" className="icon icon--linkedin"><FaLinkedin /></a></li>
-                <li><a href="https://www.youtube.com/channel/UCes99-lSbNJjQgvzcPmdezg" aria-label="See videos on Youtube" className="icon icon--youtube"><FaYoutubeSquare /></a></li>   
+                <li><a href={props.social.facebook} aria-label="Visit us on Facebook" className="icon icon--facebook"><FaFacebook /></a></li>
+                <li><a href={props.social.linkedin} aria-label="Connect with Karl on Linked in" className="icon icon--linkedin"><FaLinkedin /></a></li>
+                <li><a href={props.social.youtube} aria-label="See videos on Youtube" className="icon icon--youtube"><FaYoutubeSquare /></a></li>   
             </ul>
             <ul className="copyright">
                 <li>&copy; Tenacity Interiors Ltd {(new Date().getFullYear())}</li>
