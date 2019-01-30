@@ -30,16 +30,16 @@ const Footer = (props) => (
                 </div>
                 <div className="col-4">
                     <h4>Tenacity Interiors Limited</h4>
-                    <p>
-                        Registered Office: <br />
-                        <address>
-                        {props.address.adr1}<br />
-                        {props.address.adr2}<br />
-                        {props.address.adr3}<br />
-                        {props.address.town}<br />
-                        {props.address.postcode}<br />
-                        </address>
-                    </p>
+                
+                    <em>Registered Office:</em><br />
+                    <address>
+                    {props.address.adr1}<br />
+                    {props.address.adr2}<br />
+                    {props.address.adr3}<br />
+                    {props.address.town}<br />
+                    {props.address.postcode}<br />
+                    </address>
+                    
                     <p>
                         Registered company No.{props.regnumber}<br />
                         VAT No: {props.vatnumber}

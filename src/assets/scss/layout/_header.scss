@@ -75,14 +75,16 @@
 			height: inherit;
 			line-height: inherit;
 
-			a {
+			a, button {
 				border: 0;
+				outline:0;
 				display: block;
 				font-size: 0.8em;
 				height: inherit;
 				line-height: inherit;
 				padding: 0 0.75em;
 				position: relative;
+				box-shadow: none;
 				vertical-align: middle;
 
 				&:last-child {

@@ -129,7 +129,7 @@ class Banner extends Component {
                 id="banner"
                 tag="section" 
                 className={`major ${(this.state.videoPlaying) ? 'active' : ''}`}
-                style={{ backgroundImage: `url(${bgImage})`}}
+                style={{ backgroundImage: `url(https://img.youtube.com/vi/${this.props.videoId}/maxresdefault.jpg)`}}
                 threshold={0}
                 onChange={(inView) => { trigger(!inView)}}>
                     <div ref={this.screen} className={`tv ${(this.state.videoActive) ? 'on' : ''}`}>

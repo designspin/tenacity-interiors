@@ -37,6 +37,7 @@ const Contact = (props) => (
                 From traditional styles to ultra-modern concepts, you can have every confidence that, whatever the size of the project, we will create outstanding results.</p>
                 <div style={{paddingBottom: '50%', position: 'relative', height: 0, overflow: 'hidden'}} >
                     <iframe
+                        title="Finding Tenacity Interiors"
                         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d154348.23468794156!2d0.6701702328491209!3d52.809905431127724!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d786984d265851%3A0x2ce2797d48aff155!2sTenacity+Interiors!5e0!3m2!1sen!2suk!4v1405610545667" />
                 </div>

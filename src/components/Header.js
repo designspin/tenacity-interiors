@@ -31,7 +31,7 @@ const Header = ({ phone, ...props }) => (
         </Link>
         <p><FaPhoneSquare /> <a href={`tel:${phone}`}>{ phone }</a></p>
         <nav>
-            <a href="#" className="menu-link" onClick={(e) => { e.preventDefault(); props.onToggleMenu(); }}>Menu</a>
+            <button className="menu-link" onClick={(e) => { e.preventDefault(); props.onToggleMenu(); }}>Menu</button>
         </nav>
     </header>
 );
