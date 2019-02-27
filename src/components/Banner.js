@@ -18,7 +18,9 @@ class Banner extends Component {
     this._onEnd = this._onEnd.bind(this);
     this._onPlay = this._onPlay.bind(this);
     this.onPlayClick = this.onPlayClick.bind(this);
+  }
 
+  componentDidMount() {
     document.addEventListener('webkitfullscreenchange', this.fullScreenExit.bind(this), false);
     document.addEventListener('fullscreenchange', this.fullScreenExit.bind(this), false);
     document.addEventListener('mozfullscreenchange', this.fullScreenExit.bind(this), false);
