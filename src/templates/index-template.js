@@ -172,7 +172,7 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                     <Link to="/bespoke-furniture" className="link primary"></Link>
                 </article>
             </section>
-            <section>
+            <section className="paper paper--alt">
                 <div className="inner">
                     <header className="major">
                         <h2>A Reputation For Excellence</h2>

@@ -3,8 +3,17 @@
     color: _palette(bg);
 }
 
+.paper.paper--alt {
+    background-color: _palette(bg-alt);
+    color: white;
+}
+
 .paper h1, .paper h2, .paper h3, .paper h4, .paper h5, .paper h6 {
     color: _palette(bg);
+}
+
+.paper.paper--alt h1, .paper.paper--alt h2, .paper.paper--alt h3, .paper.paper--alt h4, .paper.paper--alt h5, .paper.paper--alt h6 {
+    color: white;
 }
 
 .paper .lead {

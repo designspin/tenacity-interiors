@@ -1,161 +1,125 @@
 import React, { Component } from 'react';
-import { FaPlay, FaStop } from 'react-icons/fa';
+import { FaPlay, FaStop, FaExpand } from 'react-icons/fa';
 import Observer from 'react-intersection-observer';
 import { NavConsumer } from './layout';
-
-import bgImage from '../assets/images/home-hero.jpg';
+import YouTube from 'react-youtube';
 
 class Banner extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            videoScriptLoaded: null,
-            videoHasPlayed: false,
-            videoLoading: false,
-            videoPlaying: false,
-            videoActive: false,
-        }
-        this.screen = React.createRef();
-        this.onPlayerReady = this.onPlayerReady.bind(this);
-        this.onPlayerStateChange = this.onPlayerStateChange.bind(this);
-        this.rescaleVideo = this.rescaleVideo.bind(this);
-        this.onPlayClick = this.onPlayClick.bind(this);
-        this.onStopClick = this.onStopClick.bind(this);
+    this.state = {
+      playerReady: false,
+      playing: false,
+      player: false
     }
 
-    componentDidMount() {
-        this.setState({
-            videoScriptLoaded: (window.YT && window.YT.Player) ? true : false
-        });
-    }
+    this._onReady = this._onReady.bind(this);
+    this._onEnd = this._onEnd.bind(this);
+    this._onPlay = this._onPlay.bind(this);
+    this.onPlayClick = this.onPlayClick.bind(this);
 
-    onStopClick(e) {
-        e.preventDefault();
-        this.video.stopVideo();
+    document.addEventListener('webkitfullscreenchange', this.fullScreenExit.bind(this), false);
+    document.addEventListener('fullscreenchange', this.fullScreenExit.bind(this), false);
+    document.addEventListener('mozfullscreenchange', this.fullScreenExit.bind(this), false);
+    document.addEventListener('MSFullscreenChange', this.fullScreenExit.bind(this), false);
+  }
+
+  _onReady(e) {
+    e.target.mute();
+    e.target.playVideo();
+
+    this.setState({
+      playerReady: true,
+      playing: false,
+      player: e.target
+    });
+  }
+
+  _onEnd(e) {
+    e.target.playVideo();
+  }
+
+  _onPlay(e) {
+    this.setState({ playing: true })
+  }
+
+  fullScreenExit() {
+    if(this.state.player.isMuted()) {
+      this.state.player.unMute();
+    } else {
+      this.state.player.mute();
+    }
+  }
+
+  onPlayClick() {  
+    if(this.state.player) {
+      let iFrame = document.querySelector('.video-iframe');
+      let requestFullScreen = iFrame.requestFullScreen || iFrame.mozRequestFullScreen || iFrame.webkitRequestFullScreen;
+      
+      if(requestFullScreen) {
         
-        this.setState({
-            videoPlaying: false,
-            videoActive: false,
-            videoLoading: false
-        })
-        window.removeEventListener('resize', this.rescaleVideo);
-    }
+        requestFullScreen.bind(iFrame)();
+        this.state.player.unMute();
 
-    setVideo() {
-        const playerDefaults = {autoplay: 0, autohide: 1, modestbranding: 0, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3};
-        this.video = new window.YT.Player('tv', {
-            events: {
-                'onReady': this.onPlayerReady,
-                'onStateChange': this.onPlayerStateChange
-            },
-            playerVars: playerDefaults
-        });
-        this.setState({
-            videoHasPlayed: true
-        })
-    }
-
-    onPlayClick(e) {
-        e.preventDefault();
         
-        this.setState({
-            videoActive: true,
-            videoLoading: true
-        });
+      }
 
-        if(!this.state.videoScriptLoaded) {
-            
-            const tag = document.createElement('script');
-            tag.src = 'https://www.youtube.com/player_api';
-            const firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-            
-            window.onYouTubePlayerAPIReady = () => {
-                this.setState({
-                    videoScriptLoaded: true
-                });
+    }
+  }
 
-                
-                this.setVideo();
-                
-            }
-        } else if (!this.state.videoHasPlayed) {
-            this.setVideo();
-        } else {
-            this.video.playVideo();
-        }
-        window.addEventListener('resize', this.rescaleVideo);
+  render() {
+    const videoOptions = {
+      playerVars: {
+        autoplay: 0,
+        controls: 0,
+        rel: 0,
+        showinfo: 0
+      }
     }
 
-    onPlayerReady() {
-        console.log("Player Ready!");
-        this.video.loadVideoById({'videoId': this.props.videoId});
-    }
-
-    onPlayerStateChange(e) {
-        if(e.data === 1) {
-            this.rescaleVideo();
-            this.setState({
-                videoPlaying: true,
-                videoLoading: false
-            });
-        } else if (e.data === window.YT.PlayerState.ENDED) {
-            this.setState({
-                videoPlaying: false
-            })
-        }
-    }
-
-    rescaleVideo() {
-        const { current } = this.screen;
-        let w = current.clientWidth;
-        let h = current.clientHeight;
-                
-        if(w/h > 16/9) {
-            this.video.setSize(w, w/16*9);
-            current.firstChild.style.left = `-${(current.offsetWidth - w) / 2}px`;
-        } else {
-            this.video.setSize(h/9*16, h);
-            current.firstChild.style.left = `-${(current.offsetWidth - w) / 2}px`;
-        }
-    }
-
-    render() {
-        return (
-        <NavConsumer>
-        {({ trigger }) => (
-            <Observer 
-                id="banner"
-                tag="section" 
-                className={`major ${(this.state.videoPlaying) ? 'active' : ''}`}
-                style={{ backgroundImage: `url(https://img.youtube.com/vi/${this.props.videoId}/maxresdefault.jpg)`}}
-                threshold={0}
-                onChange={(inView) => { trigger(!inView)}}>
-                    <div ref={this.screen} className={`tv ${(this.state.videoActive) ? 'on' : ''}`}>
-                        <div className="screen-holder">
-                            <div className={`screen mute`} id="tv"></div>
-                        </div>
-                        <a href="?stop=true" aria-label="Stop Video" onClick={this.onStopClick} className="button"><FaStop /></a>
-                    </div>
-                    <div className="inner">
-                        <div className="grid-wrapper">
-                        <header className="major col-6">
-                            <h1>{this.props.title}</h1>
-                        </header>
-                        <div className="content col-6">
-                            <p>{this.props.introText}</p>
-                            <ul className="actions">
-                                <li><a href="?play=true" aria-label="Play Video" onClick={this.onPlayClick} className="button"><FaPlay /></a></li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
-            </Observer>
-        )}
-        </NavConsumer>
-        )
-    }
+    return (
+    <NavConsumer>
+      {({ trigger }) => (
+          <Observer 
+              id="banner"
+              tag="section" 
+              className={`major`}
+              threshold={0}
+              style={{ backgroundImage: !this.state.playing ? `url(https://img.youtube.com/vi/${this.props.videoId}/maxresdefault.jpg)` : 'none'}}
+              onChange={(inView) => { trigger(!inView)}}>
+              <div className="video-background">
+                <div className="video-foreground">
+                  <YouTube
+                    videoId={this.props.videoId}
+                    opts={videoOptions}
+                    className="video-iframe"
+                    onReady={this._onReady}
+                    onEnd={this._onEnd}
+                    onPlay={this._onPlay}
+                  />      
+                </div>
+              </div>     
+              <div className="inner">
+                  <div className="grid-wrapper">
+                  <header className="major col-6">
+                      <h1>{this.props.title}</h1>
+                  </header>
+                  <div className="content col-6">
+                      <p>{this.props.introText}</p>
+                      {this.state.playing &&
+                        <ul className="actions">
+                            <li><button onClick={this.onPlayClick} className="button"><FaPlay /></button></li>
+                        </ul>
+                      }
+                  </div>
+                  </div>
+              </div> 
+          </Observer>
+      )}
+    </NavConsumer>
+    );
+  }
 }
 
-export default Banner
+export default Banner;

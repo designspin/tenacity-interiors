@@ -29,9 +29,9 @@ const Header = ({ phone, ...props }) => (
                 <polygon points="48.42 75.05 115.42 75.05 115.42 80.71 93.09 80.71 93.09 183.04 115.42 183.04 115.42 187.71 48.42 187.71 48.42 183.58 70.75 183.58 70.75 79.27 48.42 79.27 48.42 75.05" style={{fill:(props.isNavRevealed) ? "#4f4f4f" : "#4aafb6"}}/>
             </svg>
         </Link>
-        <p><FaPhoneSquare /> <a href={`tel:${phone}`}>{ phone }</a></p>
+        <p><FaPhoneSquare /> <a href={`tel:${phone.replace(/\s/g, '')}s`}>{ phone }</a></p>
         <nav>
-            <button className="menu-link" onClick={(e) => { e.preventDefault(); props.onToggleMenu(); }}>Menu</button>
+            <button className="menu-link" onClick={(e) => { e.preventDefault(); props.onToggleMenu(); }}></button>
         </nav>
     </header>
 );
