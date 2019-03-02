@@ -151,3 +151,18 @@ collections:
           - {label: "Meta Description", name: "metaDescription", widget: "string"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/privacy-policy.md"
+        label: "Privacy & Cookie Policy"
+        name: "privacy"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "privacy-template"}
+          - {label: "Meta Title", name: "metaTitle", widget: "string"}
+          - {label: "Meta Description", name: "metaDescription", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "About", name: "about", widget: "markdown"}
+          - label: "Sections"
+            name: "sections"
+            widget: list
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "markdown"}
