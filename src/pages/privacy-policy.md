@@ -212,23 +212,26 @@ sections:
       notice, please contact:
 
 
-      Karl Andrews
+      Karl Andrews<br />
 
-      Data Protection Officer
+      Data Protection Officer<br />
 
-      Tenacity Interiors
 
-      Unit 3, Waterford Industrial Estate
+      <address>
 
-      Mill Lane
+      Tenacity Interiors<br />
 
-      Great Massingham
+      Unit 3, Waterford Industrial Estate<br />
 
-      King's Lynn
+      Mill Lane<br />
 
-      Norfolk
+      Great Massingham<br />
 
-      PE32 2HT
+      King's Lynn<br />
+
+      Norfolk<br />
+
+      PE32 2HT</address>
 
 
       You will be responded to as promptly as possible.
