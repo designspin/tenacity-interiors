@@ -212,12 +212,11 @@ sections:
       notice, please contact:
 
 
+      <address>
+
       Karl Andrews<br />
 
       Data Protection Officer<br />
-
-
-      <address>
 
       Tenacity Interiors<br />
 
@@ -231,7 +230,7 @@ sections:
 
       Norfolk<br />
 
-      PE32 2HT</address>
+      PE32 2HT</address><br />
 
 
       You will be responded to as promptly as possible.
