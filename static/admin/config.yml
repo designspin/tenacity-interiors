@@ -60,6 +60,19 @@ collections:
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Location", name: "location", widget: "string"}
       - {label: "Photo", name: "image", widget: "image", default: "/img/no-photo-large.png"}
+  - name: "projects"
+    label: "Projects"
+    folder: "src/pages/projects"
+    create: true
+    fields:
+      - {label: "Key", name: "key", widget: "hidden", default: "projects"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        default: "Kitchen"
+        options: ["Kitchen", "Bedroom", "Vanity Unit", "Furniture"]
   - name: "pages"
     label: "Pages"
     delete: false
