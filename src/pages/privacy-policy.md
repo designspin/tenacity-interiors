@@ -207,5 +207,62 @@ sections:
       that any personal information that's entered on the website is encrypted
       when being transferred to the web server.
     title: Security
+  - body: >-
+      Should you wish to contact us in relation to any issues within this
+      notice, please contact:
+
+
+      Karl Andrews
+
+      Data Protection Officer
+
+      Tenacity Interiors
+
+      Unit 3, Waterford Industrial Estate
+
+      Mill Lane
+
+      Great Massingham
+
+      King's Lynn
+
+      Norfolk
+
+      PE32 2HT
+
+
+      You will be responded to as promptly as possible.
+
+
+      If you are concerned that any of the information we hold on you is
+      incorrect or you have a general enquiry in connection with our Privacy
+      policy, please contact us.
+
+
+      Please be aware that our website may link to other websites which may be
+      accessed through our site. We are not responsible for the data policies or
+      procedures or the content of these linked websites.
+
+
+      ## Your right to complain:
+
+
+      Should you wish to make a complaint in relation to data protection issues
+      relating to our firm, you can contact us as above or you can contact our
+      regulator as follows: The Information Commissioner’s Office Wycliffe
+      House, Water Lane, Wilmslow, Cheshire, SK9 5AF Tel: 0303 123 1113 (local
+      rate) or 01625 545 745, if you prefer to use a national rate number
+      [www.ico.org.uk](https://ico.org.uk/)
+
+
+      ## Consent
+
+
+      We are required under the Regulations to obtain your consent to our
+      collection, processing, sharing and holding of your personal data. Please
+      ensure you have read this notice fully and accept all that it contains. If
+      you have any queries, please contact us directly. Please contact us should
+      you not be able to read or understand this notice sufficiently.
+    title: General
 ---
 
