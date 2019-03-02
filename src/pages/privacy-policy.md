@@ -141,5 +141,71 @@ sections:
       statistical analysis purposes and in no way gives us access to your
       computer or any personal information about you.
     title: Cookies
+  - body: >-
+      We have in place a full information security policy, business continuity
+      and disaster recovery plans. We take data security very seriously and have
+      in place we feel the most secure options available to store and transfer
+      your data securely. We can provide details on request.
+
+
+      We will treat all of your information in strict confidence and we will
+      endeavour to take all reasonable steps to protect your personal
+      information. However, we cannot guarantee the security of any data you
+      disclose online. You accept the inherent security risks of providing
+      information and dealing online over the Internet and will not hold us
+      responsible for any breach of security unless this is due to our
+      negligence or wilful default.
+
+
+      You should not submit any sensitive or private information through this
+      website except through acknowledged secure areas. The owners of this
+      website accept no responsibility for data submitted through insecure areas
+      of this website.
+
+
+      Your browser generates other information, including which language the
+      site is displayed in, and your Internet Protocol address ("IP address").
+      An IP address is a set of numbers which is assigned to your computer
+      during a browsing session whenever you log on to the Internet via your
+      internet service provider or your network (if you access the internet
+      from, for example, a computer at work). Your IP address is automatically
+      logged by our servers and used to collect traffic data about visitors to
+      our websites. We do not use your IP address to identify you personally.
+
+
+      Please note that countries outside the EEA may not have the same level of
+      protection as countries within the EEA, but we always demand that those
+      parties to whom we transfer data adhere to the same security procedures
+      that we follow ourselves. By submitting your personal information, you
+      consent to such processing and transfers in connection with such orders,
+      offers of services and for any other purposes to which you consent at the
+      time you provide the information.
+
+
+      ## Protection against cyber-attacks/hackers
+
+
+      We have a firewall on our web server which is designed to inspect incoming
+      traffic, weed out any malicious attacks and provides a first line of
+      defence between a potential hacker and the data that we are hosting.
+
+
+      ## Information you send us via email
+
+
+      If you enter into any correspondence via email to report a problem or ask
+      a question, then we will retain the personal information you send us for
+      the purposes of dealing with your enquiry and will not share the data with
+      any third parties.
+
+
+      ## Data encryption
+
+
+      Our website uses an SSL certificate which makes sure that there is an
+      encrypted connection between the web browser and the server. This means
+      that any personal information that's entered on the website is encrypted
+      when being transferred to the web server.
+    title: Security
 ---
 
