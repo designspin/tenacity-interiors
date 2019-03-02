@@ -30,24 +30,24 @@ export const PrivacyQuery = graphql`
 
 export const PrivacyTemplate = ({title, about, sections}) => {
   return (
-    <main id="main">
+    <main id="main" className="privacy-template">
       <div className="paper">
             <div className="inner">
-              <header class="major">
+              <header className="major">
                 <h1>{title}</h1>
               </header>
               <HTMLContent content={about} />
               <ul className="box">
               { sections.map((part) => 
-                <li key={`list-${part.title}`}><a href={`#${part.title}`}>{part.title}</a></li>
+                <li key={`list-${part.title}`}><a href={`#${part.title.replace(/\s/g, '')}`}>{part.title}</a></li>
               )}
               </ul>
               <div className="columns-2">
               { sections.map((part, i) => 
-                <>
-                  <h2 id={part.title}>{i+1}. {part.title}</h2>
+                <section key={`section-${part.title}`}>
+                  <h2 id={part.title.replace(/\s/g, '')}>{i+1}. {part.title}</h2>
                   <HTMLContent content={part.body.replace('<p><div>', '<div>').replace('</div></p>', '</div>')} />
-                </>
+                </section>
               )}
               </div>
             </div>
