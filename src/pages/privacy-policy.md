@@ -1,5 +1,5 @@
 ---
-templateKey: default-template
+templateKey: privacy-template
 metaTitle: Privacy & Cookie Policy | Tenacity Interiors
 metaDescription: >-
   Tenacity Interiors' privacy & cookies policy sets out how we use your personal

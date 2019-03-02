@@ -1,5 +1,7 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
+const remark = require('remark');
+const remarkHTML = require('remark-html');
 
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
@@ -57,5 +59,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             node,
             value,
         });
+    }
+
+    if(node.frontmatter !== undefined && node.frontmatter.sections !== undefined) {
+
+        node.frontmatter.sections.forEach((section, index) => {
+            const markdown = section.body;
+            console.log(markdown);
+            node.frontmatter.sections[index].body = remark()
+            .use(remarkHTML)
+            .processSync(markdown)
+            .toString();
+        });
+
+        return node;
     }
 }

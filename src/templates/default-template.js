@@ -54,7 +54,7 @@ const DefaultTemplate = ({ title, content, contentComponent, url, settings }) =>
 
 const DefaultPage = ({ data }) => {
     const { post } = data;
-    console.log(post.html);
+    
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
