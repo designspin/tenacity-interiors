@@ -212,12 +212,11 @@ sections:
       notice, please contact:
 
 
+      <address>
+
       Karl Andrews<br />
 
       Data Protection Officer<br />
-
-
-      <address>
 
       Tenacity Interiors<br />
 
