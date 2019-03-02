@@ -54,7 +54,7 @@ sections:
       action your request as quickly as possible.
 
 
-      ## Your rights regarding your data:
+      ### Your rights regarding your data:
 
 
       * We will not hold your information for any longer than is necessary and
@@ -182,7 +182,7 @@ sections:
       time you provide the information.
 
 
-      ## Protection against cyber-attacks/hackers
+      ### Protection against cyber-attacks/hackers
 
 
       We have a firewall on our web server which is designed to inspect incoming
@@ -190,7 +190,7 @@ sections:
       defence between a potential hacker and the data that we are hosting.
 
 
-      ## Information you send us via email
+      ### Information you send us via email
 
 
       If you enter into any correspondence via email to report a problem or ask
@@ -199,7 +199,7 @@ sections:
       any third parties.
 
 
-      ## Data encryption
+      ### Data encryption
 
 
       Our website uses an SSL certificate which makes sure that there is an
@@ -247,7 +247,7 @@ sections:
       procedures or the content of these linked websites.
 
 
-      ## Your right to complain:
+      ### Your right to complain:
 
 
       Should you wish to make a complaint in relation to data protection issues
@@ -258,7 +258,7 @@ sections:
       [www.ico.org.uk](https://ico.org.uk/)
 
 
-      ## Consent
+      ### Consent
 
 
       We are required under the Regulations to obtain your consent to our
