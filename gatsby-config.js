@@ -39,13 +39,20 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-plugin-netlify-cms-paths`,
+            options: {
+              cmsConfig: `static/admin/config.yml`
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1900,
+              maxWidth: 600,
+              showCaptions: true,
               withWebp: true
             }
           },
-          'gatsby-plugin-netlify-cms-paths',
+          `gatsby-remark-copy-linked-files`,
           {
             resolve: 'gatsby-remark-embed-youtube',
             options: {

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactSlick from 'react-slick';
+import { graphql, StaticQuery } from 'gatsby';
 
 const settings = {
     dots: true,
@@ -7,29 +8,46 @@ const settings = {
     autoplay: true,
     autoplaySpeed: 7000
 }
-const Testimonials = (props) => (
-    <ReactSlick {...settings}>
-        <figure className="testimonial">
-            <blockquote>
-                I have commissioned various items for my specific use. 
-                The items were of the highest quality &amp; of a unique design. 
-                Karl carried out these commissions &amp; produced what was required to the highest specification.
-            </blockquote>
-            <footer>
-                <cite>- <strong>Terrence Cole,</strong> <em>London</em></cite>
-            </footer>
-        </figure>
-        <figure className="testimonial">
-            <blockquote>
-                Tenacity Interiors were the perfect joinery company to use when refurbishing my house. 
-                I have been most impressed with the supply &amp; manufacture of bespoke kitchen units. 
-                The fitting &amp; after-care service have been exemplary.
-            </blockquote>
-            <footer>
-                <cite>- <strong>Jenny Carter</strong></cite>
-            </footer>
-        </figure>
-    </ReactSlick>
-)
 
-export default Testimonials;
+const TestimonialsQuery = graphql`
+    query TestimonialsQuery {
+        allMarkdownRemark(
+          sort: { order: ASC, fields: [frontmatter___title]}
+          filter: {fileAbsolutePath: {regex: "/client-testimonials/"}}
+        ) {
+          edges {
+            node {
+              id
+              frontmatter {
+                quote
+                title
+                location
+              }
+            }
+          }
+        }
+      }
+`;
+
+const Testimonials = ({ posts }) => (
+    <ReactSlick {...settings}>
+        {posts.map((post) => 
+            <figure key={post.node.id} className="testimonial">
+                <blockquote>{post.node.frontmatter.quote}</blockquote>
+                <footer>
+                    <cite>- <strong>{post.node.frontmatter.title}</strong>, <em>{post.node.frontmatter.location}</em></cite>
+                </footer>
+            </figure>
+        )}
+    </ReactSlick>
+);
+
+const TestimonialComponent = (props) =>
+    <StaticQuery
+        query={TestimonialsQuery}
+        render={ result => {
+            const data = result.allMarkdownRemark.edges;
+            return <Testimonials posts={data} {...props} />
+        }} />
+
+export default TestimonialComponent;

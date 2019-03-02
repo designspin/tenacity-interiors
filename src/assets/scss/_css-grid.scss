@@ -4,6 +4,10 @@
 	margin-bottom: 2em;
 }
 
+.col-min-fix {
+	min-width: 0;
+}
+
 @media screen and (min-width: 981px) {
 
 	.grid-wrapper {

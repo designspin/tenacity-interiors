@@ -1,6 +1,9 @@
 .testimonial {
+    display: block;
+    padding-right: _size(element-margin);
     blockquote {
         border-left-color: _palette(bg-alt);
+        border-left-width: 4px;
     }
     cite {
         color: _palette(bg);
