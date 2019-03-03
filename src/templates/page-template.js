@@ -7,7 +7,7 @@ import Share from '../components/Share';
 import pic05 from '../assets/images/karl-andrews.png'
 
 export const PageQuery = graphql`
-    query Page($id: String!) {
+    query Page($id: String!, $cat: String!) {
         markdownRemark(id: { eq: $id }) {
             id
             html
@@ -30,13 +30,36 @@ export const PageQuery = graphql`
                 slug
             }
         }
+        images: allMarkdownRemark(
+            sort: { order: ASC, fields: [frontmatter___title]}
+            filter: {
+                fileAbsolutePath: {regex: "/projects/"}
+                frontmatter: {category: { eq: $cat}}
+            }
+        ) {
+            edges {
+                node {
+                    id
+                    frontmatter {
+                        title
+                        category
+                        image {
+                            childImageSharp {
+                                fluid(maxWidth: 500) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 `;
 
 export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url, mainImage, settings }) => {
     const PostContent = contentComponent || Content;
-
-    console.log(content);
+    
     return (
     <main id="main">
         <Banner
@@ -69,6 +92,10 @@ export const PageTemplate = ({mainHeading, mainText, title, content, contentComp
 
 const Page = ({data}) => {
     const { markdownRemark: post } = data;
+    const { images: edges } = data;
+
+    console.log(images);
+
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}

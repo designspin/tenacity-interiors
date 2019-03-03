@@ -72,7 +72,11 @@ collections:
         name: "category"
         widget: "select"
         default: "Kitchen"
-        options: ["Kitchen", "Bedroom", "Vanity Unit", "Furniture"]
+        options:
+          - { label: "Kitchen", value: "handmade-kitchens" }
+          - { label: "Bedroom", value: "fitted-bedrooms" }
+          - { label: "Vanity Unit", value: "vanity-units" }
+          - { label: "Furniture", value: "bespoke-furniture" }
   - name: "pages"
     label: "Pages"
     delete: false

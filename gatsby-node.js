@@ -32,6 +32,7 @@ exports.createPages = ({ actions, graphql }) => {
 
         posts.forEach(edge => {
             const id = edge.node.id;
+            const cat = edge.node.fields.slug;
 
             if(edge.node.frontmatter.templateKey) {
                 createPage({
@@ -41,6 +42,7 @@ exports.createPages = ({ actions, graphql }) => {
                     ),
                     context: {
                         id,
+                        cat
                     },
                 });
             }
