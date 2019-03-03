@@ -17,6 +17,7 @@ exports.createPages = ({ actions, graphql }) => {
                         }
                         frontmatter {
                             templateKey
+                            category
                         }
                     }
                 }
@@ -32,8 +33,9 @@ exports.createPages = ({ actions, graphql }) => {
 
         posts.forEach(edge => {
             const id = edge.node.id;
-            const cat = edge.node.fields.slug;
-
+            const cat = edge.node.fields.slug.replace('/','').replace('/','');
+            
+            console.log(cat);
             if(edge.node.frontmatter.templateKey) {
                 createPage({
                     path: edge.node.fields.slug,
@@ -43,7 +45,7 @@ exports.createPages = ({ actions, graphql }) => {
                     context: {
                         id,
                         cat
-                    },
+                     },
                 });
             }
         });

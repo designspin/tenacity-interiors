@@ -5,6 +5,7 @@ import Content, { HTMLContent } from '../components/Content';
 import Banner from '../components/BannerLanding';
 import Share from '../components/Share';
 import pic05 from '../assets/images/karl-andrews.png'
+import Lightbox from '../components/Lightbox';
 
 export const PageQuery = graphql`
     query Page($id: String!, $cat: String!) {
@@ -45,7 +46,7 @@ export const PageQuery = graphql`
                         category
                         image {
                             childImageSharp {
-                                fluid(maxWidth: 500) {
+                                fluid(maxWidth: 900) {
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -57,9 +58,9 @@ export const PageQuery = graphql`
     }
 `;
 
-export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url, mainImage, settings }) => {
+export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url, mainImage, settings, projects}) => {
     const PostContent = contentComponent || Content;
-    
+    console.log(projects);
     return (
     <main id="main">
         <Banner
@@ -67,6 +68,13 @@ export const PageTemplate = ({mainHeading, mainText, title, content, contentComp
             introText={mainText}
             mainImage={mainImage}
         />
+        <section className="paper">
+            <div className="inner">
+                { projects && projects.edges &&
+                    <Lightbox images={projects.edges} />
+                }
+            </div>
+        </section>
         <section className="paper">
             <div className="inner">
                 <h2>{title}</h2>
@@ -93,9 +101,7 @@ export const PageTemplate = ({mainHeading, mainText, title, content, contentComp
 const Page = ({data}) => {
     const { markdownRemark: post } = data;
     const { images: edges } = data;
-
-    console.log(images);
-
+    
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
@@ -110,6 +116,7 @@ const Page = ({data}) => {
                 mainText={post.frontmatter.mainText}
                 url={post.fields.slug}
                 mainImage={post.frontmatter.mainImage.childImageSharp.fluid}
+                projects={edges}
             />
         </Layout>
     )
