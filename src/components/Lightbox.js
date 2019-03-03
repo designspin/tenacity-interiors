@@ -82,7 +82,7 @@ class Lightbox extends Component {
           visible={showLightbox} onKeyUp={e => this.handleKeyUp(e)}>
             <div className="lightbox-modal__content">
               <img style={{ maxWidth: '100%'}} alt={images[selectedImage].node.frontmatter.title} src={images[selectedImage].node.frontmatter.image.childImageSharp.fluid.src} />
-              <p>{images[selectedImage].node.frontmatter.title}</p>
+              <h2>{images[selectedImage].node.frontmatter.title}</h2>
               <div className="lightbox-modal__controls">
                 <button onClick={this.closeModal}>Close</button>
                 <div className="lightbox-modal__nav">

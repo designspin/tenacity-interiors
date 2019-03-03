@@ -43,7 +43,7 @@
 }
 
 .lightbox-modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -57,13 +57,33 @@
 
 .lightbox-modal__content {
   margin: 15px;
-  max-width: 700px;
+  height: 100%;
   width: 100%;
+  color: white;
+}
+
+.lightbox-modal__content img {
+  max-height: 90%;
+  max-width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.lightbox-modal__content h2 {
+  padding-top: 1em;
   color: white;
 }
 
 .lightbox-modal__controls {
   display: flex;
+  height: 100%;
+  transform: translateY(-150px);
+  align-items: flex-end;
   justify-content: space-between;
 }
 
