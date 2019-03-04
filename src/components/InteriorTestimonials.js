@@ -10,13 +10,13 @@ const settings = {
 }
 
 const TestimonialsQuery = graphql`
-    query TestimonialsQuery {
+    query TestimonialsInteriorQuery {
         allMarkdownRemark(
-          limit: 6
+          limit: 5
           sort: { order: ASC, fields: [frontmatter___title]}
           filter: {
             fileAbsolutePath: {regex: "/client-testimonials/"},
-            frontmatter: { type: { eq: "customer" }}
+            frontmatter: { type: { eq: "interior-designer" }}
           }
         ) {
           edges {

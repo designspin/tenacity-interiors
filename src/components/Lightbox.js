@@ -84,10 +84,10 @@ class Lightbox extends Component {
               <img style={{ maxWidth: '100%'}} alt={images[selectedImage].node.frontmatter.title} src={images[selectedImage].node.frontmatter.image.childImageSharp.fluid.src} />
               <h2>{images[selectedImage].node.frontmatter.title}</h2>
               <div className="lightbox-modal__controls">
-                <button onClick={this.closeModal}>Close</button>
+                <button className="button small primary" onClick={this.closeModal}>Close</button>
                 <div className="lightbox-modal__nav">
-                  <button onClick={this.goBack} disabled={selectedImage === 0}>Previous</button>
-                  <button onClick={this.goForward} disabled={selectedImage === images.length - 1}>Next</button>
+                  <button className="button small primary" onClick={this.goBack} disabled={selectedImage === 0}>Previous</button>
+                  <button className="button small primary" onClick={this.goForward} disabled={selectedImage === images.length - 1}>Next</button>
                 </div>
               </div>
             </div>

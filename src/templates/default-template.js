@@ -5,6 +5,7 @@ import Content, { HTMLContent } from '../components/Content';
 import Banner from '../components/BannerDefault';
 import Share from '../components/Share';
 import pic05 from '../assets/images/karl-andrews.png'
+import TestimonialBlock from '../components/TestimonialBlock';
 
 export const DefaultQuery = graphql`
     query DefaultPage($id: String!) {
@@ -21,10 +22,38 @@ export const DefaultQuery = graphql`
                 slug
             }
         }
+        testimonials: allMarkdownRemark(
+            sort: { order: ASC, fields: [frontmatter___title]}
+            filter: {
+                fileAbsolutePath: {regex: "/client-testimonials/"}
+                frontmatter: {type: {eq: "interior-designer"}}
+            }
+        ) {
+            edges {
+                node {
+                    id
+                    frontmatter {
+                        title
+                        category
+                        type
+                        name
+                        location
+                        quote
+                        image {
+                            childImageSharp{
+                                fluid(maxWidth: 46) {
+                                ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 `;
 
-const DefaultTemplate = ({ title, content, contentComponent, url, settings }) => {
+const DefaultTemplate = ({ title, content, contentComponent, url, settings, testimonials }) => {
     const PostContent = contentComponent || Content;
 
     return (
@@ -35,6 +64,13 @@ const DefaultTemplate = ({ title, content, contentComponent, url, settings }) =>
                 <PostContent content={content} />
             </div>
         </section>
+        { url === "/interior-designers-architects/" &&
+         <section className="paper paper--testimonials">
+            <div className="inner">
+                <TestimonialBlock testimonials={testimonials} />
+            </div>
+         </section>
+        }
         <aside>
             <div className="inner">
                 <div className="grid-wrapper">
@@ -54,7 +90,8 @@ const DefaultTemplate = ({ title, content, contentComponent, url, settings }) =>
 
 const DefaultPage = ({ data }) => {
     const { post } = data;
-    
+    const { testimonials } = data;
+
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
@@ -66,6 +103,7 @@ const DefaultPage = ({ data }) => {
                 content={post.html.replace('<p><div>', '<div>').replace('</div></p>', '</div>')}
                 contentComponent={HTMLContent}
                 url={post.fields.slug}
+                testimonials={testimonials}
             />
         </Layout>
     );

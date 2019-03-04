@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import Content, { HTMLContent } from '../components/Content';
 import Banner from '../components/Banner';
 import Testimonials from '../components/Testimonials';
+import InteriorTestimonials from '../components/InteriorTestimonials';
 import pic05 from '../assets/images/karl-andrews.png'
 
 
@@ -71,10 +72,19 @@ export const IndexQuery = graphql`
                 }
             }
         }
+        interior: markdownRemark(fields: {slug: {eq: "/interior-designers-architects/"}}) {
+            excerpt
+            fields {
+                slug
+            }
+            frontmatter {
+                title
+            }
+        }
     }
 `;
 
-const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, mainText, kitchen, bedroom, vanity, furniture, settings }) => {
+const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, mainText, kitchen, bedroom, vanity, furniture, settings, interior }) => {
     const PostContent = contentComponent || Content;
 
     return (
@@ -99,6 +109,21 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                             <h2>Kind Customer Words</h2>
                             <Testimonials />
                         </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section className="paper">
+                <div className="inner">
+                    <div className="grid-wrapper">
+                        <div className="col-8 col-min-fix mb-5">
+                            <h2>What Interior Designers Say...</h2>
+                            <InteriorTestimonials />
+                        </div>
+                        <aside className="col-4 box alt">
+                            <h2>{interior.frontmatter.title}</h2>
+                            <p>{interior.excerpt}<Link to={interior.fields.slug}>Read More</Link></p>
+                        </aside>
                     </div>
                 </div>
             </section>
@@ -193,7 +218,7 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
 }
 
 const IndexPage = ({ data }) => {
-    const { post, kitchens, bedrooms, vanity, furniture } = data;
+    const { post, kitchens, bedrooms, vanity, furniture, interior } = data;
 
     return (
         <Layout
@@ -205,6 +230,7 @@ const IndexPage = ({ data }) => {
                 title={post.frontmatter.title}
                 content={post.html}
                 contentComponent={HTMLContent}
+                interior={interior}
                 videoId={post.frontmatter.mainVideo}
                 mainHeading={post.frontmatter.mainHeading}
                 mainText={post.frontmatter.mainText}

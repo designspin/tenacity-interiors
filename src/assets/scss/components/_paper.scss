@@ -8,6 +8,10 @@
     color: white;
 }
 
+#main .paper.paper--testimonials {
+    border-top: 40px solid _palette(bg-alt);
+}
+
 .paper h1, .paper h2, .paper h3, .paper h4, .paper h5, .paper h6 {
     color: _palette(bg);
 }

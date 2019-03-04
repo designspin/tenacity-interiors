@@ -6,6 +6,7 @@ import Banner from '../components/BannerLanding';
 import Share from '../components/Share';
 import pic05 from '../assets/images/karl-andrews.png'
 import Lightbox from '../components/Lightbox';
+import TestimonialBlock from '../components/TestimonialBlock';
 
 export const PageQuery = graphql`
     query Page($id: String!, $cat: String!) {
@@ -55,12 +56,39 @@ export const PageQuery = graphql`
                 }
             }
         }
+        testimonials: allMarkdownRemark(
+            sort: { order: ASC, fields: [frontmatter___title]}
+            filter: {
+                fileAbsolutePath: {regex: "/client-testimonials/"}
+                frontmatter: {category: {eq: $cat}}
+            }
+        ) {
+            edges {
+                node {
+                    id
+                    frontmatter {
+                        title
+                        category
+                        name
+                        location
+                        quote
+                        image {
+                            childImageSharp{
+                                fluid(maxWidth: 46) {
+                                ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 `;
 
-export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url, mainImage, settings, projects}) => {
+export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url, mainImage, settings, projects, testimonials}) => {
     const PostContent = contentComponent || Content;
-    console.log(projects);
+    
     return (
     <main id="main">
         <Banner
@@ -81,6 +109,13 @@ export const PageTemplate = ({mainHeading, mainText, title, content, contentComp
                 <PostContent className="columns-2" content={content} />
             </div>
         </section>
+        { testimonials &&
+            <section className="paper paper--testimonials">
+                <div className="inner">
+                    <TestimonialBlock testimonials={testimonials} />
+                </div>
+            </section>
+        }
         <aside>
             <div className="inner">
                 <div className="grid-wrapper">
@@ -101,7 +136,8 @@ export const PageTemplate = ({mainHeading, mainText, title, content, contentComp
 const Page = ({data}) => {
     const { markdownRemark: post } = data;
     const { images: edges } = data;
-    
+    const { testimonials } = data;
+
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
@@ -117,6 +153,7 @@ const Page = ({data}) => {
                 url={post.fields.slug}
                 mainImage={post.frontmatter.mainImage.childImageSharp.fluid}
                 projects={edges}
+                testimonials={testimonials}
             />
         </Layout>
     )
