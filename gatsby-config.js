@@ -1,10 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: "Tenacity Interiors",
-    description: "A website for Tenacity Interiors"
+    description: "A website for Tenacity Interiors",
+    siteUrl: `https://www.tenacityinteriors.com`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -24,8 +24,6 @@ const Footer = (props) => (
                         <li><Link to="/about-us">About Us</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                        <li><Link to="/accessibility">Accessibility</Link></li>
-                        <li><Link to="/sitemap">Sitemap</Link></li>
                     </ul>
                 </div>
                 <div className="col-4">

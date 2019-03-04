@@ -45,6 +45,9 @@ const Meta = ({ metaTitle, metaDescription }) =>
         <html lang="en" />
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
+        <meta property="og:site_name" content="Tenacity Interiors Ltd" />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
     </Helmet>
 
 class Layout extends React.Component {
