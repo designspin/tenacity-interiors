@@ -24,3 +24,5 @@ With everything decided, all you have to do is wait for the call that says “yo
 One aspect of having a Tenacity Interiors kitchen that constantly delights clients and professional interior designers alike, is the availability of a huge range of woods, work surface stone and granite options, veneers, high gloss and painted finishes – as well as the latest treatments and finishes for style-specific detailing such as Shaker or lime washed, for example.
 
 The only limit is your imagination – but if you aren’t exactly sure, the Tenacity Interiors team will guide you through the planning phase so your kitchen will be more than you ever dreamed it could be. **To begin, all you need to do is call Karl or Trevor on 01485 521888.**
+
+`youtube:https://www.youtube.com/embed/h5Nma9lOACg`
