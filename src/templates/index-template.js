@@ -143,7 +143,7 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                         <h3>Kitchens</h3>
                         <p>Hand-Crafted, as Individual as You</p>
                     </header>
-                    <Link to="/handmade-kitchens" className="link primary"></Link>
+                    <Link aria-label="Kitchens" to="/handmade-kitchens" className="link primary"></Link>
                 </article>
                 <article>
                     <Img 
@@ -160,7 +160,7 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                         <h3>Bedrooms</h3>
                         <p>Hand-Made Fitted Bedrooms</p>
                     </header>
-                    <Link to="/fitted-bedrooms" className="link primary"></Link>
+                    <Link aria-label="Bedrooms" to="/fitted-bedrooms" className="link primary"></Link>
                 </article>
                 <article>
                     <Img 
@@ -177,7 +177,7 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                         <h3>Vanity Units</h3>
                         <p>Hand-Made Specifically For You</p>
                     </header>
-                    <Link to="/vanity-units" className="link primary"></Link>
+                    <Link aria-label="Vanity Units" to="/vanity-units" className="link primary"></Link>
                 </article>
                 <article>
                     <Img 
@@ -194,7 +194,7 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                         <h3>Furniture</h3>
                         <p>We Design and Deliver Hand Made Furniture You Need</p>
                     </header>
-                    <Link to="/bespoke-furniture" className="link primary"></Link>
+                    <Link aria-label="Furniture" to="/bespoke-furniture" className="link primary"></Link>
                 </article>
             </section>
             <section className="paper paper--alt">

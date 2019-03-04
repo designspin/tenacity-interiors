@@ -111,7 +111,7 @@ class Banner extends Component {
                       <p>{this.props.introText}</p>
                       {this.state.playing &&
                         <ul className="actions">
-                            <li><button onClick={this.onPlayClick} className="button"><FaPlay /></button></li>
+                            <li><button aria-label="Full Screen Video" onClick={this.onPlayClick} className="button"><FaPlay /></button></li>
                         </ul>
                       }
                   </div>

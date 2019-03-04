@@ -41,7 +41,8 @@ export const NavProvider = NavContext.Provider;
 export const NavConsumer = NavContext.Consumer;
 
 const Meta = ({ metaTitle, metaDescription }) =>
-    <Helmet>
+    <Helmet htmlAttributes={[{"lang": "en"}]}>
+        <html lang="en" />
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
     </Helmet>

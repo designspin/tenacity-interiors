@@ -31,7 +31,7 @@ const Header = ({ phone, ...props }) => (
         </Link>
         <p><FaPhoneSquare /> <a href={`tel:${phone.replace(/\s/g, '')}s`}>{ phone }</a></p>
         <nav>
-            <button className="menu-link" onClick={(e) => { e.preventDefault(); props.onToggleMenu(); }}></button>
+            <button aria-label="menu" className="menu-link" onClick={(e) => { e.preventDefault(); props.onToggleMenu(); }}></button>
         </nav>
     </header>
 );
