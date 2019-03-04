@@ -6,7 +6,7 @@ quote: >-
   produced what was required to the highest specification.
 title: Highest Quality & Unique Design
 name: Terrence Cole
-image: /img/no-photo-large.png
+image: ''
 location: London
 type: customer
 category: bespoke-furniture
