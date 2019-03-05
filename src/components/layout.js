@@ -40,7 +40,7 @@ const NavContext = React.createContext({});
 export const NavProvider = NavContext.Provider;
 export const NavConsumer = NavContext.Consumer;
 
-const Meta = ({ metaTitle, metaDescription, metaImage }) =>
+const Meta = ({ metaTitle, metaDescription, metaImage, metaPageUrl }) =>
     <Helmet>
         <html lang="en" />
         <title>{metaTitle}</title>
@@ -51,6 +51,8 @@ const Meta = ({ metaTitle, metaDescription, metaImage }) =>
         { 
             metaImage && <meta property="og:image" content={metaImage} />
         }
+        <meta property="og:url" content={metaPageUrl} />
+        <meta property="twitter:card" content="summary_large_image" />
     </Helmet>
 
 class Layout extends React.Component {
@@ -100,7 +102,7 @@ class Layout extends React.Component {
 
         return (
             <>
-                <Meta metaTitle={this.props.metaTitle} metaDescription={this.props.metaDescription} metaImage={this.props.metaImage} />
+                <Meta metaTitle={this.props.metaTitle} metaDescription={this.props.metaDescription} metaImage={this.props.metaImage} metaPageUrl={this.props.metaPageUrl} />
                 <div className={`body ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
                     <NavProvider value={{ trigger: this.handleRevealMenu, revealed: this.state.isNavRevealed }}>
                         <div id="wrapper">

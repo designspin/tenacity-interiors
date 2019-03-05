@@ -153,6 +153,7 @@ const Page = ({data}) => {
             metaTitle={post.frontmatter.metaTitle}
             metaDescription={post.frontmatter.metaDescription}
             metaImage={post.frontmatter.mainImage.childImageSharp.fixed.src}
+            metaPageUrl={meta.siteMetadata.siteUrl + post.fields.slug}
             >
             <PageTemplate 
                 title={post.frontmatter.title}
