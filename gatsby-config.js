@@ -2,11 +2,21 @@ module.exports = {
   siteMetadata: {
     title: "Tenacity Interiors",
     description: "A website for Tenacity Interiors",
-    siteUrl: `https://www.tenacityinteriors.com`
+    //siteUrl: `https://www.tenacityinteriors.com`
+    siteUrl: `https://competent-jang-ea9478.netlify.com`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: "UA-54714813-1",
+        head: false,
+        anonymize: true,
+        cookieDomain: "tenacityinteriors.com"
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -25,6 +25,9 @@ export const PageQuery = graphql`
                         fluid(maxWidth: 1900) {
                             ...GatsbyImageSharpFluid
                         }
+                        fixed(width: 1200, height: 630) {
+                            ...GatsbyImageSharpFixed
+                        }
                     }
                 }
             }
@@ -83,10 +86,15 @@ export const PageQuery = graphql`
                 }
             }
         }
+        meta: site{
+            siteMetadata {
+                siteUrl
+            }
+        }
     }
 `;
 
-export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url, mainImage, settings, projects, testimonials}) => {
+export const PageTemplate = ({mainHeading, mainText, title, content, contentComponent, url, siteUrl, mainImage, settings, projects, testimonials}) => {
     const PostContent = contentComponent || Content;
     
     return (
@@ -120,10 +128,10 @@ export const PageTemplate = ({mainHeading, mainText, title, content, contentComp
             <div className="inner">
                 <div className="grid-wrapper">
                     <div className="col-8">
-                        <Share url={url} text="Share This:" />
+                        <Share url={siteUrl + url} text="Share This:" />
                     </div>
                     <div className="col-4 complimentary">
-                    <p className="col-8">To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone}`}>{settings.phone}<strong></strong></a></p>
+                    <p className="col-8">To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone.replace(' ', '')}`}>{settings.phone}<strong></strong></a></p>
                         <img className="col-4" src={pic05} alt="Karl Andrews" />
                     </div>
                 </div>
@@ -137,12 +145,14 @@ const Page = ({data}) => {
     const { markdownRemark: post } = data;
     const { images: edges } = data;
     const { testimonials } = data;
+    const { meta } = data;
 
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
             metaTitle={post.frontmatter.metaTitle}
             metaDescription={post.frontmatter.metaDescription}
+            metaImage={post.frontmatter.mainImage.childImageSharp.fixed.src}
             >
             <PageTemplate 
                 title={post.frontmatter.title}
@@ -151,6 +161,7 @@ const Page = ({data}) => {
                 mainHeading={post.frontmatter.mainHeading}
                 mainText={post.frontmatter.mainText}
                 url={post.fields.slug}
+                siteUrl={meta.siteMetadata.siteUrl}
                 mainImage={post.frontmatter.mainImage.childImageSharp.fluid}
                 projects={edges}
                 testimonials={testimonials}

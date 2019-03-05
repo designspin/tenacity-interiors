@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FaPlay, FaStop, FaExpand } from 'react-icons/fa';
+import { FaPlay } from 'react-icons/fa';
 import Observer from 'react-intersection-observer';
 import { NavConsumer } from './layout';
 import YouTube from 'react-youtube';

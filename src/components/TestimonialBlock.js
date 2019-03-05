@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 const TestimonialBlock = ({ testimonials }) => (
   <div className="grid-wrapper">
     {testimonials.edges.map((testimonial) => (
-      <div className="col-4 mb-5">
+      <div key={testimonial.node.id} className="col-4 mb-5">
         <div className="testimonial testimonial--block">
           <h4 className="testimonial__title">{testimonial.node.frontmatter.title}</h4>
           <blockquote>{testimonial.node.frontmatter.quote}</blockquote>

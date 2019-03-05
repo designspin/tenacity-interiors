@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
 class Lightbox extends Component {
@@ -79,7 +78,7 @@ class Lightbox extends Component {
             visibility: showLightbox ? 'visible' : 'hidden'
           }} 
           className="lightbox-modal" 
-          visible={showLightbox} onKeyUp={e => this.handleKeyUp(e)}>
+          visible={showLightbox.toString()} onKeyUp={e => this.handleKeyUp(e)}>
             <div className="lightbox-modal__content">
               <img style={{ maxWidth: '100%'}} alt={images[selectedImage].node.frontmatter.title} src={images[selectedImage].node.frontmatter.image.childImageSharp.fluid.src} />
               <h2>{images[selectedImage].node.frontmatter.title}</h2>

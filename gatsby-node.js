@@ -35,8 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
         posts.forEach(edge => {
             const id = edge.node.id;
             const cat = edge.node.fields.slug.replace('/','').replace('/','');
-            const name = edge.node.frontmatter.title
-            console.log(cat);
+            const name = edge.node.frontmatter.title;
             if(edge.node.frontmatter.templateKey) {
                 createPage({
                     path: edge.node.fields.slug,
@@ -71,7 +70,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
         node.frontmatter.sections.forEach((section, index) => {
             const markdown = section.body;
-            console.log(markdown);
             node.frontmatter.sections[index].body = remark()
             .use(remarkHTML)
             .processSync(markdown)

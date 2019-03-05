@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import Content, { HTMLContent } from '../components/Content';
-import Banner from '../components/BannerLanding';
-import Share from '../components/Share';
+import { HTMLContent } from '../components/Content';
+import Banner from '../components/BannerDefault';
+//import Share from '../components/Share';
 import pic05 from '../assets/images/karl-andrews.png'
 
 export const PrivacyQuery = graphql`
@@ -28,14 +28,12 @@ export const PrivacyQuery = graphql`
     }
 `;
 
-export const PrivacyTemplate = ({title, about, sections}) => {
+export const PrivacyTemplate = ({title, about, sections, settings}) => {
   return (
     <main id="main" className="privacy-template">
       <div className="paper">
             <div className="inner">
-              <header className="major">
-                <h1>{title}</h1>
-              </header>
+              <Banner title={title} />
               <HTMLContent content={about} />
               <ul className="box">
               { sections.map((part) => 
@@ -52,6 +50,17 @@ export const PrivacyTemplate = ({title, about, sections}) => {
               </div>
             </div>
       </div>
+      <aside>
+            <div className="inner">
+                <div className="grid-wrapper">
+                    
+                    <div className="col-12 complimentary">
+                    <p className="col-8">To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone.replace(' ', '')}`}>{settings.phone}<strong></strong></a></p>
+                        <img className="col-4" src={pic05} alt="Karl Andrews" />
+                    </div>
+                </div>
+            </div>
+        </aside>
     </main>
   );
 }
