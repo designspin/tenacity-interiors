@@ -25,6 +25,11 @@ export const PrivacyQuery = graphql`
                 slug
             }
         }
+        meta: site{
+          siteMetadata {
+              siteUrl
+          }
+      }
     }
 `;
 
@@ -67,12 +72,13 @@ export const PrivacyTemplate = ({title, about, sections, settings}) => {
 
 const PrivacyPage = ({ data }) => {
   const { post } = data;
-
+  const { meta } = data;
   return (
     <Layout
       templateKey={post.frontmatter.templateKey}
       metaTitle={post.frontmatter.metaTitle}
       metaDescription={post.frontmatter.metaDescription}
+      metaPageUrl={meta.siteMetadata.siteUrl + post.fields.slug}
     >
       <PrivacyTemplate
         title={post.frontmatter.title}

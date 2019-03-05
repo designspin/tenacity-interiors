@@ -41,6 +41,7 @@ collections:
               - { label: "Facebook", name: "facebook", widget: "string", default: "https://www.facebook.com/tenacityinteriors"}
               - { label: "Linked In", name: "linkedin", widget: "string", default: "https://www.linkedin.com/in/karl-andrews-a8022159/"}
               - { label: "You Tube", name: "youtube", widget: "string", default: "https://www.youtube.com/channel/UCes99-lSbNJjQgvzcPmdezg"}
+          - { label: "Default Share Image", name: "shareimage", widget: image }
   - name: "client-testimonials"
     label: "Testimonials"
     folder: "src/pages/client-testimonials"

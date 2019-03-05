@@ -23,6 +23,9 @@ export const IndexQuery = graphql`
                 mainText
                 title
             }
+            fields {
+                slug
+            }
         }
         kitchens: markdownRemark(fields: { slug: { eq: "/handmade-kitchens/"}}) {
             frontmatter {
@@ -79,6 +82,11 @@ export const IndexQuery = graphql`
             }
             frontmatter {
                 title
+            }
+        }
+        meta: site {
+            siteMetadata {
+                siteUrl
             }
         }
     }
@@ -218,13 +226,14 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
 }
 
 const IndexPage = ({ data }) => {
-    const { post, kitchens, bedrooms, vanity, furniture, interior } = data;
+    const { post, kitchens, bedrooms, vanity, furniture, interior, meta } = data;
 
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
             metaTitle={post.frontmatter.metaTitle}
             metaDescription={post.frontmatter.metaDescription}
+            metaPageUrl={meta.siteMetadata.siteUrl + post.fields.slug}
             >
             <PageTemplate
                 title={post.frontmatter.title}

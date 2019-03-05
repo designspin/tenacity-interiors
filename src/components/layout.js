@@ -31,6 +31,13 @@ const LayoutQuery = graphql`
                     linkedin
                     youtube
                 }
+                shareimage {
+                    childImageSharp {
+                        fixed(width: 1200, height: 630) {
+                            ...GatsbyImageSharpFixed
+                        }
+                    }
+                }
             }
         }
     }
@@ -102,7 +109,7 @@ class Layout extends React.Component {
 
         return (
             <>
-                <Meta metaTitle={this.props.metaTitle} metaDescription={this.props.metaDescription} metaImage={this.props.metaImage} metaPageUrl={this.props.metaPageUrl} />
+                <Meta metaTitle={this.props.metaTitle} metaDescription={this.props.metaDescription} metaImage={this.props.metaImage || this.props.data.shareimage.childImageSharp.fixed.src} metaPageUrl={this.props.metaPageUrl} />
                 <div className={`body ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
                     <NavProvider value={{ trigger: this.handleRevealMenu, revealed: this.state.isNavRevealed }}>
                         <div id="wrapper">

@@ -22,6 +22,11 @@ export const ContactQuery = graphql`
                 slug
             }
         }
+        meta: site{
+            siteMetadata {
+                siteUrl
+            }
+        }
     }
 `;
 
@@ -56,11 +61,13 @@ const ContactTemplate = ({ title, content, contentComponent, url, settings }) =>
 
 const ContactPage = ({ data }) => {
     const { post } = data;
+    const { meta } = data;
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
             metaTitle={post.frontmatter.metaTitle}
             metaDescription={post.frontmatter.metaDescription}
+            metaPageUrl={meta.siteMetadata.siteUrl + post.fields.slug}
             >
             <ContactTemplate
                 title={post.frontmatter.title}

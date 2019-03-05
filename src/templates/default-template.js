@@ -50,6 +50,11 @@ export const DefaultQuery = graphql`
                 }
             }
         }
+        meta: site{
+            siteMetadata {
+                siteUrl
+            }
+        }
     }
 `;
 
@@ -91,12 +96,13 @@ const DefaultTemplate = ({ title, content, contentComponent, url, settings, test
 const DefaultPage = ({ data }) => {
     const { post } = data;
     const { testimonials } = data;
-
+    const { meta } = data;
     return (
         <Layout
             templateKey={post.frontmatter.templateKey}
             metaTitle={post.frontmatter.metaTitle}
             metaDescription={post.frontmatter.metaDescription}
+            metaPageUrl={meta.siteMetadata.siteUrl + post.fields.slug}
             >
             <DefaultTemplate
                 title={post.frontmatter.title}
