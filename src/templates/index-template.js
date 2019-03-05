@@ -233,7 +233,7 @@ const IndexPage = ({ data }) => {
             templateKey={post.frontmatter.templateKey}
             metaTitle={post.frontmatter.metaTitle}
             metaDescription={post.frontmatter.metaDescription}
-            metaPageUrl={meta.siteMetadata.siteUrl + post.fields.slug}
+            metaPageUrl={meta.siteMetadata.siteUrl + post.fields.slug.replace(/\/(?=[^\/]*$)/, '')}
             >
             <PageTemplate
                 title={post.frontmatter.title}
