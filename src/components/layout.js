@@ -40,11 +40,6 @@ const LayoutQuery = graphql`
                 }
             }
         }
-        meta: site{
-            siteMetadata {
-                siteUrl
-            }
-        }
     }
 `;
 
@@ -52,7 +47,7 @@ const NavContext = React.createContext({});
 export const NavProvider = NavContext.Provider;
 export const NavConsumer = NavContext.Consumer;
 
-const Meta = ({ metaTitle, metaDescription, metaImage, metaPageUrl, siteUrl }) =>
+const Meta = ({ metaTitle, metaDescription, metaImage, metaPageUrl }) =>
     <Helmet>
         <html lang="en" />
         <title>{metaTitle}</title>
@@ -146,10 +141,11 @@ const LayoutComponent = (props) =>
         query={ LayoutQuery }
         render={ result => {
             const data = result.markdownRemark.frontmatter;
-            const siteUrl = result.meta.siteMetaData.siteUrl;
+            const { meta } = result;
+            
             switch(props.templateKey) {
                 default:
-                    return <Layout data={data} siteUrl={siteUrl} {...props} />
+                    return <Layout data={data} {...props} />
             }
     }} />
 

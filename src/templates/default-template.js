@@ -103,6 +103,7 @@ const DefaultPage = ({ data }) => {
             metaTitle={post.frontmatter.metaTitle}
             metaDescription={post.frontmatter.metaDescription}
             metaPageUrl={meta.siteMetadata.siteUrl + post.fields.slug.replace(/\/(?=[^\/]*$)/, '')}
+            siteUrl={meta.siteMetadata.siteUrl}
             >
             <DefaultTemplate
                 title={post.frontmatter.title}
