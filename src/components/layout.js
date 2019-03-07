@@ -40,6 +40,11 @@ const LayoutQuery = graphql`
                 }
             }
         }
+        meta: site{
+            siteMetadata {
+                siteUrl
+            }
+        }
     }
 `;
 
@@ -47,7 +52,7 @@ const NavContext = React.createContext({});
 export const NavProvider = NavContext.Provider;
 export const NavConsumer = NavContext.Consumer;
 
-const Meta = ({ metaTitle, metaDescription, metaImage, metaPageUrl }) =>
+const Meta = ({ metaTitle, metaDescription, metaImage, metaPageUrl, siteUrl }) =>
     <Helmet>
         <html lang="en" />
         <title>{metaTitle}</title>
@@ -109,7 +114,11 @@ class Layout extends React.Component {
 
         return (
             <>
-                <Meta metaTitle={this.props.metaTitle} metaDescription={this.props.metaDescription} metaImage={(this.props.metaImage) ? this.props.metaPageUrl + this.props.metaImage : this.props.metaPageUrl + this.props.data.shareimage.childImageSharp.fixed.src} metaPageUrl={this.props.metaPageUrl} />
+                <Meta 
+                    metaTitle={this.props.metaTitle} 
+                    metaDescription={this.props.metaDescription} 
+                    metaImage={(this.props.metaImage) ? this.props.siteUrl + this.props.metaImage : this.props.siteUrl + this.props.data.shareimage.childImageSharp.fixed.src} 
+                    metaPageUrl={this.props.metaPageUrl} />
                 <div className={`body ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
                     <NavProvider value={{ trigger: this.handleRevealMenu, revealed: this.state.isNavRevealed }}>
                         <div id="wrapper">
@@ -137,10 +146,10 @@ const LayoutComponent = (props) =>
         query={ LayoutQuery }
         render={ result => {
             const data = result.markdownRemark.frontmatter;
-
+            const siteUrl = result.meta.siteMetaData.siteUrl;
             switch(props.templateKey) {
                 default:
-                    return <Layout data={data} {...props} />
+                    return <Layout data={data} siteUrl={siteUrl} {...props} />
             }
     }} />
 
