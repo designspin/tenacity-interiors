@@ -51,6 +51,8 @@ const Meta = ({ metaTitle, metaDescription, metaImage, metaPageUrl }) =>
     <Helmet>
         <html lang="en" />
         <title>{metaTitle}</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="description" content={metaDescription} />
         <meta property="og:site_name" content="Tenacity Interiors Ltd" />
         <meta property="og:title" content={metaTitle} />

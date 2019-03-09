@@ -84,15 +84,14 @@ class Banner extends Component {
       e.target.mute();
       
     }
-    
-    e.target.playVideo();
 
-    document.querySelector('.video-iframe').addEventListener('webkitendfullscreen', this.exitFullScreen, false);
     this.setState({
       playerReady: true,
       playing: false,
       player: e.target
     });
+
+    e.target.playVideo();
   }
 
   _onEnd(e) {
