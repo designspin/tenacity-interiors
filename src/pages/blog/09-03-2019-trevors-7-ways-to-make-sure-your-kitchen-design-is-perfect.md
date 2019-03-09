@@ -1,5 +1,4 @@
 ---
-key: blog-post
 title: Trevor's 7 Ways to Make Sure Your Kitchen Design is Perfect
 date: 2019-03-09T19:26:13.423Z
 tags:
