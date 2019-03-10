@@ -13,10 +13,14 @@
 			border-top: 0 !important;
 		}
 
+		header.major {
+			max-width: 100%;
+		}
+
 		> section {
 			@include vendor('display', 'flex');
 			@include vendor('flex-direction', 'row');
-			background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
+			background-color: desaturate(lighten(_palette(bg), 2), 1);
 
 			> .image {
 				background-position: center center;
@@ -58,11 +62,30 @@
 					max-width: 100%;
 					width: _size(inner);
 				}
+				
+				color: white;
+
+				h3 {
+					display: inline-block;
+					color: white;
+					border-color: white;
+				}
+
+				datetime {
+					display: inline-block;
+					font-size: 80%;
+					margin-bottom: 1em;
+				}
+
+				.button {
+					margin-top: 2em;
+				}
+
 			}
 
 			&:nth-child(2n) {
 				@include vendor('flex-direction', 'row-reverse');
-				background-color: desaturate(lighten(_palette(bg-alt), 4), 2);
+				background-color: desaturate(lighten(_palette(bg), 4), 2);
 
 				> .content {
 					@include vendor('align-items', 'flex-end');

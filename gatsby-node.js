@@ -2,7 +2,36 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const remark = require('remark');
 const remarkHTML = require('remark-html');
+const { createPaginationPages } = require('gatsby-pagination');
 const _ = require('lodash');
+
+const createBlogPages = (createPage, posts) => {
+    posts.forEach((post) => {
+        createPage({
+            path: post.fields.slug,
+            component: path.resolve(
+                `src/templates/${String(post.frontmatter.templateKey)}.js`
+            ),
+            context: { id: post.id }
+        });
+    });
+};
+
+const createCategoryPages = (createPage, posts) => {
+    const category = 'blog';
+    const postIds = posts.map((post) => {
+        return post.id;
+    });
+
+    createPaginationPages({
+        createPage,
+        pathFormatter: path => `/${_.kebabCase(category)}${path !== 1 ? '/' + path : '/'}`,
+        component: path.resolve(`src/templates/blog.js`),
+        limit: 3,
+        edges: postIds,
+        context: { category }
+    })
+}
 
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
@@ -56,7 +85,10 @@ exports.createPages = ({ actions, graphql }) => {
         
         const pages = result.data.content.edges;
         const blogs = result.data.blog.edges;
-        let blogObject = {};
+        let blogObject = {
+            posts: [],
+            tags: []
+        }
 
         //Create content pages
         pages.forEach(edge => {
@@ -79,16 +111,15 @@ exports.createPages = ({ actions, graphql }) => {
             }
         });
 
+        
+        //Create blog pages
         blogs.forEach(({ node }) => {
             const { tags, templateKey } = node.frontmatter;
             const { id: postId } = node;
+            
+            blogObject.posts.push(node);
 
             if(templateKey !== 'blog-post') { return; }
-
-            blogObject = {
-                posts: [],
-                tags: []
-            }
 
             if(tags) {
                 tags.forEach((tag) => {
@@ -101,6 +132,9 @@ exports.createPages = ({ actions, graphql }) => {
                 })
             }
         });
+        
+        createBlogPages(createPage, blogObject.posts);
+        createCategoryPages(createPage, blogObject.posts);
     });
 }
 
@@ -121,6 +155,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
                 name: 'ids',
                 node,
                 value: [node.id]
+            })
+
+            createNodeField({
+                name: 'categoryPath',
+                node,
+                value: 'blog',
+
             })
 
             if(node.frontmatter.tags) {
