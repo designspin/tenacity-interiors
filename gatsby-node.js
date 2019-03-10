@@ -2,13 +2,19 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const remark = require('remark');
 const remarkHTML = require('remark-html');
+const _ = require('lodash');
 
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
 
     return graphql(`
         {
-            allMarkdownRemark(limit: 1000) {
+            content: allMarkdownRemark(
+                limit: 1000
+                filter: {
+                    frontmatter: { templateKey: { ne: "blog-post" }}
+                }
+            ) {
                 edges {
                     node {
                         id
@@ -23,16 +29,38 @@ exports.createPages = ({ actions, graphql }) => {
                     }
                 }
             }
+            blog: allMarkdownRemark(
+                filter: {
+                    fileAbsolutePath: { regex: "/blog/" }
+                }
+            ) {
+                edges {
+                    node {
+                        id
+                        fields {
+                            slug
+                        }
+                        frontmatter {
+                            tags
+                            templateKey
+                        }
+                    }
+                }
+            }
         }
     `).then(result => {
         if(result.errors) {
             result.errors.forEach(e => console.error(e.toString()));
             return Promise.reject(results.errors);
         }
+        
+        const pages = result.data.content.edges;
+        const blogs = result.data.blog.edges;
+        let blogObject = {};
 
-        const posts = result.data.allMarkdownRemark.edges
-
-        posts.forEach(edge => {
+        //Create content pages
+        pages.forEach(edge => {
+            
             const id = edge.node.id;
             const cat = edge.node.fields.slug.replace('/','').replace('/','');
             const name = edge.node.frontmatter.title;
@@ -50,6 +78,29 @@ exports.createPages = ({ actions, graphql }) => {
                 });
             }
         });
+
+        blogs.forEach(({ node }) => {
+            const { tags, templateKey } = node.frontmatter;
+            const { id: postId } = node;
+
+            if(templateKey !== 'blog-post') { return; }
+
+            blogObject = {
+                posts: [],
+                tags: []
+            }
+
+            if(tags) {
+                tags.forEach((tag) => {
+                    if(tag && tag !== '') {
+                        if(!blogObject.tags[tag]) {
+                            blogObject.tags[tag] = [];
+                        }
+                        blogObject.tags[tag].push(postId);
+                    }
+                })
+            }
+        });
     });
 }
 
@@ -64,6 +115,25 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             node,
             value,
         });
+
+        if(node.frontmatter.templateKey === "blog-post") {
+            createNodeField({
+                name: 'ids',
+                node,
+                value: [node.id]
+            })
+
+            if(node.frontmatter.tags) {
+                const tagPaths = node.frontmatter.tags.map(tag => `/tags/${_.kebabCase(tag)}/`);
+                createNodeField({
+                    name: 'tagPaths',
+                    node,
+                    value: tagPaths
+                })
+            }
+        }
+
+        
     }
 
     if(node.frontmatter !== undefined && node.frontmatter.sections !== undefined) {

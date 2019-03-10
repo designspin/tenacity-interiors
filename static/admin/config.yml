@@ -69,16 +69,6 @@ collections:
           - { label: "Bedroom", value: "fitted-bedrooms" }
           - { label: "Vanity Unit", value: "vanity-units" }
           - { label: "Furniture", value: "bespoke-furniture" }
-  - name: "interior-designer-testimonials"
-    label: "Interior Designer Testimonials"
-    folder: "src/pages/interior-designer-testimonials"
-    create: true
-    fields:
-      - {label: "Key", name: "key", widget: "hidden", default: "interior-testimonials"}
-      - {label: "Quote", name: "quote", widget: "text"}
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Location", name: "location", widget: "string"}
-      - {label: "Photo", name: "image", widget: "image", default: "/img/no-photo-large.png"}
   - name: "projects"
     label: "Projects"
     folder: "src/pages/projects"
@@ -96,6 +86,19 @@ collections:
           - { label: "Bedroom", value: "fitted-bedrooms" }
           - { label: "Vanity Unit", value: "vanity-units" }
           - { label: "Furniture", value: "bespoke-furniture" }
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
+    fields: 
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Main Image", name: "mainImage", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
     delete: false

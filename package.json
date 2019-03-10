@@ -24,6 +24,7 @@
     "gatsby-transformer-remark": "^2.1.12",
     "gatsby-transformer-sharp": "^2.1.8",
     "intersection-observer": "^0.5.1",
+    "lodash": "^4.17.11",
     "netlify-cms": "^2.2.0",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",

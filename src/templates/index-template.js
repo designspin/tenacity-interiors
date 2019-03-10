@@ -120,18 +120,19 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                     </div>
                 </div>
             </section>
-            
-            <section className="paper">
+            <section className="paper paper--alt">
                 <div className="inner">
+                    <header className="major">
+                        <h2>A Reputation For Excellence</h2>
+                    </header>
                     <div className="grid-wrapper">
-                        <div className="col-8 col-min-fix mb-5">
-                            <h2>What Interior Designers Say...</h2>
-                            <InteriorTestimonials />
+                        <div className="col-8">
+                            <PostContent content={content}/>
                         </div>
-                        <aside className="col-4 box alt">
-                            <h2>{interior.frontmatter.title}</h2>
-                            <p>{interior.excerpt}<Link to={interior.fields.slug}>Read More</Link></p>
-                        </aside>
+                        <div className="col-4 complimentary">
+                            <p>To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone}`}>{settings.phone}<strong></strong></a></p>
+                            <img style={{minWidth: '150px'}} src={pic05} alt="Karl Andrews" />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -205,22 +206,21 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                     <Link aria-label="Furniture" to="/bespoke-furniture" className="link primary"></Link>
                 </article>
             </section>
-            <section className="paper paper--alt">
+            <section className="paper">
                 <div className="inner">
-                    <header className="major">
-                        <h2>A Reputation For Excellence</h2>
-                    </header>
                     <div className="grid-wrapper">
-                        <div className="col-8">
-                            <PostContent content={content}/>
+                        <div className="col-8 col-min-fix mb-5">
+                            <h2>What Interior Designers Say...</h2>
+                            <InteriorTestimonials />
                         </div>
-                        <div className="col-4 complimentary">
-                            <p>To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone}`}>{settings.phone}<strong></strong></a></p>
-                            <img style={{minWidth: '150px'}} src={pic05} alt="Karl Andrews" />
-                        </div>
+                        <aside className="col-4 box alt">
+                            <h2>{interior.frontmatter.title}</h2>
+                            <p>{interior.excerpt}<Link to={interior.fields.slug}>Read More</Link></p>
+                        </aside>
                     </div>
                 </div>
             </section>
+            
         </main>
     )
 }
