@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Content, { HTMLContent } from '../components/Content';
 import Banner from '../components/BannerBlog';
+import Share from '../components/Share';
 
 export const BlogPageQuery = graphql`
   query BlogPageQuery($id: String!) {
@@ -50,6 +51,7 @@ const BlogPostTemplate = ({ title, date, content, contentComponent, url, mainIma
           <div className="paper">
             <div className="inner">
               <PostContent content={content} />
+              <Share url={url} text="Share This:" />
             </div>
           </div>
     </article>
@@ -74,7 +76,7 @@ const BlogPost = ({ data }) => {
               mainImage={post.frontmatter.mainImage.childImageSharp.fluid}
               content={post.html.replace('<p><div>', '<div>').replace('</div></p>', '</div>')}
               contentComponent={HTMLContent}
-              url={post.fields.slug}
+              url={meta.siteMetadata.siteUrl + post.fields.slug}
           />
       </Layout>
   );

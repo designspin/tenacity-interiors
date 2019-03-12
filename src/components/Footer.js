@@ -21,6 +21,7 @@ const Footer = (props) => (
                     <h4>Site Information</h4>
                     <ul className="alt">
                         <li><Link to="/">Home</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
                         <li><Link to="/about-us">About Us</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>

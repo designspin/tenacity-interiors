@@ -1,8 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import Img from 'gatsby-image';
-import { Link } from 'gatsby';
+import Pagination from '../components/Pagination';
+import Post from '../components/Post';
+import Observer from 'react-intersection-observer';
+import { NavConsumer } from '../components/layout';
+
 
 export const CategoryQuery = graphql`
   query CategoryPage($nodes: [String]) {
@@ -20,7 +23,7 @@ export const CategoryQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             tags
             description
             mainImage {
@@ -42,38 +45,7 @@ export const CategoryQuery = graphql`
   }
 `;
 
-export const Post = (props) => {
-  const { node: post } = props.data;
-  console.log(post);
-  return (
-    <section>
-      <Link to={post.fields.slug} className="image">
-        <Img 
-          alt={post.frontmatter.title}
-          sizes={post.frontmatter.mainImage.childImageSharp.fluid} 
-          style={{
-            maxHeight: "450px",
-            width: "100%",
-            height: "100%"
-        }} />
-      </Link>
-      <div className="content">
-        <div className="inner">
-          <header className="major">
-            <h3>{post.frontmatter.title}</h3>
-            <datetime>{post.frontmatter.date}</datetime>
-            <p>{post.frontmatter.description}</p>
-            <ul className="actions">
-              <li>
-                <Link to={post.fields.slug} className="button">Read More</Link>
-              </li>
-            </ul>
-          </header>
-        </div>
-      </div>
-    </section>
-  )
-};
+
 
 const BlogCatTemplate = (props) => {
   const { category, page, prev, next, pages, total } = props.pageContext;
@@ -86,17 +58,40 @@ const BlogCatTemplate = (props) => {
 
   return (
     <main id="main">
-      <header className="paper">
-        <div className="inner">
-          <div className="subheader">
-            <small>{ total } post{ total === 1 ? '' : 's'} in</small>
-          </div>
-          <h1 style={{ textTransform: 'capitalize'}}>{ category }</h1>
-        </div>
-      </header>
+      <NavConsumer>
+        {({ trigger }) => (
+            <Observer 
+                tag="section"  
+                className="paper"
+                threshold={0}
+                onChange={(inView) => { trigger(!inView)}}>
+                <header className="inner">
+                  <div className="inner">
+                    <div className="subheader">
+                      <small>{ total } post{ total === 1 ? '' : 's'} in</small>
+                    </div>
+                    <h1 style={{ textTransform: 'capitalize'}}>{ category }</h1>
+                  </div>
+                </header>
+            </Observer>
+        )}
+    </NavConsumer>
       <section className="spotlights">
       { items }
       </section>
+      
+        <div className="inner">
+          <Pagination
+            page={page}
+            pages={pages}
+            prev={prev}
+            next={next}
+            total={total}
+            prevText="Prev"
+            nextText="Next" 
+          />
+        </div>
+        
     </main>
   )
 }
@@ -108,7 +103,6 @@ const BlogCat = (props) => {
 
   const { category } = props.pageContext;
   const { pathname } = props.location;
-  console.log(props);
 
   return (
       <Layout
@@ -118,14 +112,6 @@ const BlogCat = (props) => {
           siteUrl={meta.siteMetadata.siteUrl}
           >
           <BlogCatTemplate posts={post} {...props} />
-          {/* <BlogPostTemplate
-              title={post.frontmatter.title}
-              date={post.frontmatter.date}
-              mainImage={post.frontmatter.mainImage.childImageSharp.fluid}
-              content={post.html.replace('<p><div>', '<div>').replace('</div></p>', '</div>')}
-              contentComponent={HTMLContent}
-              url={post.fields.slug}
-          />*/}
       </Layout>
   );
 };

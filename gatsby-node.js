@@ -33,6 +33,37 @@ const createCategoryPages = (createPage, posts) => {
     })
 }
 
+const createTagPages = (createPage, tags) => {
+    const category = 'blog';
+    let allTags = [];
+
+    Object.keys(tags).forEach((tag) => {
+        allTags.push(tag);
+        const postIds = tags[tag];
+        createPaginationPages({
+            createPage,
+            pathFormatter: path => `/blog/tags/${_.kebabCase(tag)}${path !== 1 ? '/' + path : '/'}`,
+            component: path.resolve(`src/templates/tagged.js`),
+            limit: 3,
+            edges: postIds,
+            context: {
+                category,
+                tag
+            }
+        })
+    });
+
+    allTags = _.uniq(allTags).sort();
+    createPaginationPages({
+        createPage,
+        edges: allTags,
+        component: path.resolve(`src/templates/tagged.js`),
+        limit: 20,
+        context: { category },
+        pathFormatter: path => `/blog/tags${path !== 1 ? '/' + path : '/'}`
+    })
+}
+
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
 
@@ -59,6 +90,7 @@ exports.createPages = ({ actions, graphql }) => {
                 }
             }
             blog: allMarkdownRemark(
+                limit: 1000
                 filter: {
                     fileAbsolutePath: { regex: "/blog/" }
                 }
@@ -135,6 +167,7 @@ exports.createPages = ({ actions, graphql }) => {
         
         createBlogPages(createPage, blogObject.posts);
         createCategoryPages(createPage, blogObject.posts);
+        createTagPages(createPage, blogObject.tags);
     });
 }
 
