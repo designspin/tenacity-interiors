@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 
 const Post = (props) => {
   const { node: post } = props.data;
-  console.log(post);
   return (
     <section>
       <Link to={post.fields.slug} className="image">

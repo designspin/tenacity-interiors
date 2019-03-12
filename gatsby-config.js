@@ -3,7 +3,7 @@ module.exports = {
     title: "Tenacity Interiors",
     description: "A website for Tenacity Interiors",
     //siteUrl: `https://www.tenacityinteriors.com`
-    siteUrl: `https://competent-jang-ea9478.netlify.com`
+    siteUrl: `https://www.tenacityinteriors.co.uk`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
