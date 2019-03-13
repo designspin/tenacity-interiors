@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import Content, { HTMLContent } from '../components/Content';
 import Banner from '../components/Banner';
 import Testimonials from '../components/Testimonials';
+import Post from '../components/Post';
 import InteriorTestimonials from '../components/InteriorTestimonials';
 import pic05 from '../assets/images/karl-andrews.png'
 
@@ -89,11 +90,47 @@ export const IndexQuery = graphql`
                 siteUrl
             }
         }
+        latest: allMarkdownRemark(
+            filter: {
+                fileAbsolutePath: {regex: "/blog/"}
+            }
+            sort: { order: DESC, fields: [frontmatter___date]}
+            limit: 1
+          ) {
+            edges {
+              node {
+                id
+                excerpt(pruneLength: 250)
+                fields {
+                  slug
+                  categoryPath
+                }
+                frontmatter {
+                  title
+                  date(formatString: "MMMM DD, YYYY")
+                  tags
+                  description
+                  mainImage {
+                    childImageSharp {
+                      fluid(maxWidth: 600) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
     }
 `;
 
-const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, mainText, kitchen, bedroom, vanity, furniture, settings, interior }) => {
+const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, mainText, kitchen, bedroom, vanity, furniture, settings, interior, latest }) => {
     const PostContent = contentComponent || Content;
+    const blogItems = [];
+
+    latest.edges.forEach((post) => {
+        blogItems.push(<Post data={post} key={post.node.id} />);
+    });
 
     return (
         <main id="main">
@@ -125,15 +162,7 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                     <header className="major">
                         <h2>A Reputation For Excellence</h2>
                     </header>
-                    <div className="grid-wrapper">
-                        <div className="col-8">
-                            <PostContent content={content}/>
-                        </div>
-                        <div className="col-4 complimentary">
-                            <p>To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone}`}>{settings.phone}<strong></strong></a></p>
-                            <img style={{minWidth: '150px'}} src={pic05} alt="Karl Andrews" />
-                        </div>
-                    </div>
+                    <PostContent content={content}/>
                 </div>
             </section>
             <section className="tiles">
@@ -220,13 +249,24 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
                     </div>
                 </div>
             </section>
+            <div className="grid-wrapper paper paper--alt">
+                    <div className="col-8">
+                        <section className="spotlights">
+                            { blogItems }
+                        </section>
+                    </div>
+                    <div style={{ overflow: 'hidden'}} className="col-4 complimentary">
+                        <p style={{ marginLeft: '1em'}}>To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone}`}>{settings.phone}<strong></strong></a></p>
+                        <img style={{minWidth: '150px', marginRight: '1em'}} src={pic05} alt="Karl Andrews" />
+                    </div>
+            </div>
             
         </main>
     )
 }
 
 const IndexPage = ({ data }) => {
-    const { post, kitchens, bedrooms, vanity, furniture, interior, meta } = data;
+    const { post, kitchens, bedrooms, vanity, furniture, interior, meta, latest } = data;
 
     return (
         <Layout
@@ -248,6 +288,7 @@ const IndexPage = ({ data }) => {
                 bedroom={{ image: bedrooms.frontmatter.mainImage.childImageSharp.fluid, alt: bedrooms.frontmatter.mainTitle }}
                 vanity={{ image: vanity.frontmatter.mainImage.childImageSharp.fluid, alt: vanity.frontmatter.mainTitle }}
                 furniture={{ image: furniture.frontmatter.mainImage.childImageSharp.fluid, alt: furniture.frontmatter.mainTitle }}
+                latest={latest}
             />
         </Layout>
     );
