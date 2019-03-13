@@ -108,7 +108,7 @@ const BlogCat = (props) => {
       <Layout
           metaTitle={`${ category } | Tenacity Interiors`}
           metaDescription={`Read Tenacity Interiors' latest blog articles.`}
-          metaPageUrl={meta.siteMetadata.siteUrl + pathname}
+          metaPageUrl={meta.siteMetadata.siteUrl + pathname + '/'}
           siteUrl={meta.siteMetadata.siteUrl}
           >
           <BlogCatTemplate posts={post} {...props} />
