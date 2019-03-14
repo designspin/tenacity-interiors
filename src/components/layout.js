@@ -51,6 +51,7 @@ const Meta = ({ metaTitle, metaDescription, metaImage, metaPageUrl }) =>
     <Helmet>
         <html lang="en" />
         <title>{metaTitle}</title>
+        <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,Symbol"></script>
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="description" content={metaDescription} />
