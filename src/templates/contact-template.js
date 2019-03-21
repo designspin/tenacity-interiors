@@ -74,7 +74,7 @@ const ContactPage = ({ data }) => {
                 title={post.frontmatter.title}
                 content={post.html.replace('<p><div>', '<div>').replace('</div></p>', '</div>')}
                 contentComponent={HTMLContent}
-                url={post.fields.slug}
+                url={meta.siteMetadata.siteUrl + post.fields.slug.replace(/\/(?=[^\/]*$)/, '')}
             />
         </Layout>
     );
