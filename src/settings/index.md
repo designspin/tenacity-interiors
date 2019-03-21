@@ -18,6 +18,6 @@ social:
   facebook: 'https://www.facebook.com/tenacityinteriors'
   linkedin: 'https://www.linkedin.com/in/karl-andrews-a8022159/'
   youtube: 'https://www.youtube.com/channel/UCes99-lSbNJjQgvzcPmdezg'
-shareimage: /img/social-media.jpg
+shareimage: /img/img_2315_1_reduced.jpg
 ---
 
