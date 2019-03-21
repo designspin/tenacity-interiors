@@ -10,7 +10,7 @@ description: >-
   ensure it is right for you today and something you will still love in years to
   come. Here are Trevor's seven tips to help you along in your pursuit for that
   perfect kitchen. 
-mainImage: /img/_v4t7967.jpg
+mainImage: /img/img_2289_1_reduced.jpg
 ---
 ## 1. Allow some time to get the design as exact as you want it to be.
 
