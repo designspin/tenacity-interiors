@@ -5,8 +5,8 @@
 // @import '../css/font-awesome.min.css';
 // @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic');
 
-@import "css-grid";
-
+// @import "css-grid";
+//@import "~flexboxgrid-sass/flexboxgrid";
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 
@@ -50,7 +50,6 @@
 	@import 'base/typography';
 
 // Component.
-
 	@import 'components/section';
 	@import 'components/form';
 	@import 'components/box';
@@ -77,3 +76,7 @@
 	@import 'layout/wrapper';
 	@import 'layout/menu';
 	@import 'layout/columns';
+
+	.col-bottom {
+		margin-bottom: 45px;
+	}

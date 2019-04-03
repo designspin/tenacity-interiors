@@ -2,9 +2,9 @@ import React from 'react';
 import Img from 'gatsby-image';
 
 const TestimonialBlock = ({ testimonials }) => (
-  <div className="grid-wrapper">
+  <div className="row">
     {testimonials.edges.map((testimonial) => (
-      <div key={testimonial.node.id} className="col-4 mb-5">
+      <div key={testimonial.node.id} className="col-xs-12 col-sm-6 col-md-4 mb-5 col-testimonial">
         <div className="testimonial testimonial--block">
           <h4 className="testimonial__title">{testimonial.node.frontmatter.title}</h4>
           <blockquote>{testimonial.node.frontmatter.quote}</blockquote>

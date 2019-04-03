@@ -61,14 +61,16 @@ class Lightbox extends Component {
     
     return (
       <Fragment>
-        <div className="gallery">
+        <div className="row gallery">
           {images.map((project, i) => (
+            <div class="col-xs-6 col-sm-4 col-md-2">
             <figure className="gallery__item" key={project.node.id}>
               <a href={project.node.frontmatter.image.childImageSharp.fluid.src} alt={project.node.frontmatter.title} onClick={e => this.handleClick(e, i)}>
                 <Img sizes={project.node.frontmatter.image.childImageSharp.fluid} />
                 <figcaption>{project.node.frontmatter.title}</figcaption>
               </a>
             </figure>
+            </div>
           ))}
         </div>
         

@@ -126,11 +126,11 @@ export const PageTemplate = ({mainHeading, mainText, title, content, contentComp
         }
         <aside>
             <div className="inner">
-                <div className="grid-wrapper">
-                    <div className="col-8">
+                <div className="row">
+                    <div className="col-md-8">
                         <Share url={siteUrl + url} text="Share This:" />
                     </div>
-                    <div className="col-4 complimentary">
+                    <div className="col-md-4 complimentary">
                     <p className="col-8">To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone.replace(' ', '')}`}>{settings.phone}<strong></strong></a></p>
                         <img className="col-4" src={pic05} alt="Karl Andrews" />
                     </div>

@@ -78,13 +78,13 @@ const DefaultTemplate = ({ title, content, contentComponent, url, settings, test
         }
         <aside>
             <div className="inner">
-                <div className="grid-wrapper">
-                    <div className="col-8">
+                <div className="row">
+                    <div className="col-md-8">
                         <Share url={url} text="Share This:" />
                     </div>
-                    <div className="col-4 complimentary">
-                    <p className="col-8">To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone.replace(' ', '')}`}>{settings.phone}<strong></strong></a></p>
-                        <img className="col-4" src={pic05} alt="Karl Andrews" />
+                    <div className="col-md-4 complimentary">
+                    <p className="col-md-8">To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone.replace(' ', '')}`}>{settings.phone}<strong></strong></a></p>
+                        <img className="col-md-4" src={pic05} alt="Karl Andrews" />
                     </div>
                 </div>
             </div>

@@ -141,18 +141,22 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
             />
             <section className="paper">
                 <div className="inner">
-                    <div className="grid-wrapper">
-                        <div className="col-4 box alt">
-                            <h2>Why Choose Us?</h2>
-                            <ul className="alt">
-                                <li><i className="fa fa-fw fa-check-square"></i>Each project is hand-crafted from the outset</li>
-                                <li><i className="fa fa-fw fa-check-square"></i>The best available materials from established and exotic sources</li>
-                                <li><i className="fa fa-fw fa-check-square"></i>Every detail of your project will be perfect, whatever style you choose</li>
-                            </ul>
+                    <div className="row middle-xs">
+                        <div className="col-xs-12 col-md-4">
+                            <div className="box box-it alt">
+                                <h2>Why Choose Us?</h2>
+                                <ul className="alt">
+                                    <li><i className="fa fa-fw fa-check-square"></i>Each project is hand-crafted from the outset</li>
+                                    <li><i className="fa fa-fw fa-check-square"></i>The best available materials from established and exotic sources</li>
+                                    <li><i className="fa fa-fw fa-check-square"></i>Every detail of your project will be perfect, whatever style you choose</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div className="col-8 col-min-fix">
-                            <h2>Kind Customer Words</h2>
-                            <Testimonials />
+                        <div className="col-xs-12 col-md-8 col-bottom">
+                            <div className="box">
+                                <h2>Kind Customer Words</h2>
+                                <Testimonials />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -237,25 +241,29 @@ const PageTemplate = ({ title, content, contentComponent, videoId, mainHeading, 
             </section>
             <section className="paper">
                 <div className="inner">
-                    <div className="grid-wrapper">
-                        <div className="col-8 col-min-fix mb-5">
-                            <h2>What Interior Designers Say...</h2>
-                            <InteriorTestimonials />
+                    <div className="row middle-xs">
+                        <div className="col-xs-12 col-md-8 col-bottom">
+                            <div className="box">
+                                <h2>What Interior Designers Say...</h2>
+                                <InteriorTestimonials />
+                            </div>
                         </div>
-                        <aside className="col-4 box alt">
-                            <h2>{interior.frontmatter.title}</h2>
-                            <p>{interior.excerpt}<Link to={interior.fields.slug}>Read More</Link></p>
+                        <aside className="col-xs-12 col-md-4">
+                            <div className="box box-it alt">
+                                <h2>{interior.frontmatter.title}</h2>
+                                <p>{interior.excerpt}<Link to={interior.fields.slug}>Read More</Link></p>
+                            </div>
                         </aside>
                     </div>
                 </div>
             </section>
-            <div className="grid-wrapper paper paper--alt">
-                    <div className="col-8">
+            <div className="row paper paper--alt">
+                    <div className="col-xs-12 col-md-8">
                         <section className="spotlights">
                             { blogItems }
                         </section>
                     </div>
-                    <div style={{ overflow: 'hidden'}} className="col-4 complimentary">
+                    <div style={{ overflow: 'hidden'}} className="col-xs-12 col-md-4 complimentary">
                         <p style={{ marginLeft: '1em'}}>To book your complimentary design consultation today call Karl on <a href={`tel:${settings.phone}`}>{settings.phone}<strong></strong></a></p>
                         <img style={{minWidth: '150px', marginRight: '1em'}} src={pic05} alt="Karl Andrews" />
                     </div>

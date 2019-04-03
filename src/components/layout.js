@@ -2,7 +2,10 @@ import React from 'react'
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
+
+import 'flexboxgrid-sass'
 import '../assets/scss/main.scss'
+
 import Header from './Header'
 import Menu from './Menu'
 import Footer from './Footer'

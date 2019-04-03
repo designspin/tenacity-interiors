@@ -1,5 +1,5 @@
 /* CSS Grid */
-
+/* autoprefixer grid: no-autoplace */
 .mb-5 {
 	margin-bottom: 2em;
 }
@@ -13,7 +13,7 @@
 	.grid-wrapper {
 		display: grid;
 		grid-gap: 0 2.25em;
-		grid-template-columns: repeat(12, 1fr);
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 		margin: 0 auto;
 		width: 100%;
 	}

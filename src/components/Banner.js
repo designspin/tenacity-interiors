@@ -186,11 +186,13 @@ class Banner extends Component {
                 </div>
               </div>     
               <div className="inner">
-                  <div className="grid-wrapper">
-                  <header className="major col-6">
+                  <div className="row">
+                  <header className="major col-md-6">
+                    <div className="box">
                       <h1>{this.props.title}</h1>
+                    </div>
                   </header>
-                  <div className="content col-6">
+                  <div className="content col-md-6">
                       <p>{this.props.introText}</p>
                       {this.state.playing && 
                         <ul className="actions">
