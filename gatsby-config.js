@@ -11,9 +11,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-54714813-1",
+        trackingId: "UA-146918395-1",
         head: false,
-        anonymize: true,
+        anonymize: false,
         cookieDomain: "tenacityinteriors.com"
       }
     },
